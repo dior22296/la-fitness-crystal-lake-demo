@@ -102,9 +102,6 @@
   /* ---------- HERO ---------- */
   .hero { position:relative; overflow:hidden; text-align:center;
     background:#10103e url('assets/club-1381.jpg') center 32%/cover no-repeat; }
-  .hero-video { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
-  .hero-video iframe { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-    width:177.78vh; height:56.25vw; min-width:100%; min-height:100%; border:0; }
   .hero::before { content:''; position:absolute; inset:0; z-index:1;
     background:linear-gradient(180deg, rgba(10,10,42,.86), rgba(10,10,42,.62) 45%, rgba(10,10,42,.94)),
                radial-gradient(800px 420px at 50% -100px, rgba(252,177,22,.20), rgba(252,177,22,0) 60%); }
@@ -279,7 +276,7 @@
   @media (max-width:900px){ .videogrid{ grid-template-columns:repeat(2,1fr); } }
   @media (max-width:560px){ .videogrid{ grid-template-columns:1fr; } }
   .vtile { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:16/9; background:var(--navy);
-    border:1px solid var(--line); cursor:pointer; padding:0; width:100%; display:block; }
+    border:1px solid var(--line); cursor:pointer; padding:0; width:100%; display:block; text-decoration:none; }
   .vtile img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
   .vtile:hover img { transform:scale(1.04); }
   .vtile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,42,0) 40%, rgba(10,10,42,.78)); }
@@ -288,8 +285,7 @@
     box-shadow:0 8px 24px rgba(0,0,0,.35); }
   .vtile .vplay svg { width:24px; height:24px; color:var(--navy); margin-left:3px; }
   .vtile .vlabel { position:absolute; left:14px; bottom:11px; z-index:2; color:#fff; font-weight:800; font-size:15px; text-align:left; }
-  .vframe { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:16/9; background:#000; border:1px solid var(--line); }
-  .vframe iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .vidnote { font-size:13.5px; color:var(--mut); text-align:center; margin:0 auto 20px; }
 
   /* CTA band */
   .ctaband { position:relative; text-align:center; padding:52px 22px; border-top:3px solid var(--yel); border-bottom:3px solid var(--yel);
@@ -409,7 +405,6 @@
 
 <!-- ================= HERO ================= -->
 <div class="hero" id="top">
-  <div class="hero-video" id="heroVideo" data-vimeo="1023351969" aria-hidden="true"></div>
   <div class="hero-in">
     <span class="demopill">CONCEPT DEMO</span>
     <div class="statuspill" id="statusPill"><i></i><span id="statusText">Checking today's hours…</span></div>
@@ -566,14 +561,15 @@
   <p class="eyebrow">Watch</p>
   <h2>See It <span class="yl">In Motion</span></h2>
   <div class="divider"></div>
-  <p class="sub">LA Fitness's own tour and class videos — the floor, the pool, the courts and the coaching, exactly as the club films them. Tap any tile to play.</p>
+  <p class="sub">LA Fitness's own tour and class videos — the floor, the pool, the courts and the coaching, exactly as the club films them. Tap any tile to watch.</p>
+  <p class="vidnote">Full tour videos play on LA Fitness's official channels — each tile opens the video on Vimeo in a new tab.</p>
   <div class="videogrid">
-    <button class="vtile" data-vimeo="531020893" aria-label="Play the weight room tour video"><img src="assets/laf-weight-room.jpg" alt="Member training with dumbbells in the free-weight area at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Weight Room</span></button>
-    <button class="vtile" data-vimeo="531020567" aria-label="Play the pool tour video"><img src="assets/laf-pool.jpg" alt="Swimmer in the indoor lap pool" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Pool</span></button>
-    <button class="vtile" data-vimeo="531020114" aria-label="Play the courts and leagues video"><img src="assets/laf-courts.jpg" alt="League basketball at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Courts &amp; Leagues</span></button>
-    <button class="vtile" data-vimeo="589467508" aria-label="Play the personal training video"><img src="assets/laf-training.jpg" alt="Personal training session at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Personal Training</span></button>
-    <button class="vtile" data-vimeo="531019529" aria-label="Play the cardio tour video"><img src="assets/laf-cardio.jpg" alt="Cardio floor at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Cardio Floor</span></button>
-    <button class="vtile" data-vimeo="1080601203" aria-label="Play the Zumba class video"><img src="assets/laf-classes.jpg" alt="Zumba group fitness class" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Zumba® Class</span></button>
+    <a class="vtile" href="https://vimeo.com/531020893" target="_blank" rel="noopener" aria-label="Watch the weight room tour video on Vimeo (opens in a new tab)"><img src="assets/laf-weight-room.jpg" alt="Member training with dumbbells in the free-weight area at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Weight Room</span></a>
+    <a class="vtile" href="https://vimeo.com/531020567" target="_blank" rel="noopener" aria-label="Watch the pool tour video on Vimeo (opens in a new tab)"><img src="assets/laf-pool.jpg" alt="Swimmer in the indoor lap pool" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Pool</span></a>
+    <a class="vtile" href="https://vimeo.com/531020114" target="_blank" rel="noopener" aria-label="Watch the courts and leagues video on Vimeo (opens in a new tab)"><img src="assets/laf-courts.jpg" alt="League basketball at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Courts &amp; Leagues</span></a>
+    <a class="vtile" href="https://vimeo.com/589467508" target="_blank" rel="noopener" aria-label="Watch the personal training video on Vimeo (opens in a new tab)"><img src="assets/laf-training.jpg" alt="Personal training session at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Personal Training</span></a>
+    <a class="vtile" href="https://vimeo.com/531019529" target="_blank" rel="noopener" aria-label="Watch the cardio tour video on Vimeo (opens in a new tab)"><img src="assets/laf-cardio.jpg" alt="Cardio floor at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Cardio Floor</span></a>
+    <a class="vtile" href="https://vimeo.com/1080601203" target="_blank" rel="noopener" aria-label="Watch the Zumba class video on Vimeo (opens in a new tab)"><img src="assets/laf-classes.jpg" alt="Zumba group fitness class" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Zumba® Class</span></a>
   </div>
 </section>
 
@@ -932,45 +928,6 @@ function clubNow(){
   document.querySelectorAll("#chatChips .chip").forEach(b => b.addEventListener("click", () => ask(b.dataset.q)));
   form.addEventListener("submit", e => { e.preventDefault(); const v = input.value; input.value = ""; ask(v); });
 })();
-</script>
-<script>
-// Hero background video (LA Fitness's own homepage hero video) — injected only
-// after load, and skipped for reduced-motion / Save-Data visitors; the club
-// photo behind it is the hero either way.
-(function () {
-  var mount = document.getElementById('heroVideo');
-  if (!mount) return;
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var saveData = navigator.connection && navigator.connection.saveData;
-  if (reduce || saveData) return;
-  function inject() {
-    var f = document.createElement('iframe');
-    f.src = 'https://player.vimeo.com/video/' + mount.getAttribute('data-vimeo') + '?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0';
-    f.setAttribute('allow', 'autoplay; fullscreen');
-    f.title = 'LA Fitness club tour video';
-    mount.appendChild(f);
-  }
-  if (document.readyState === 'complete') {
-    if (window.requestIdleCallback) requestIdleCallback(inject); else setTimeout(inject, 600);
-  } else {
-    window.addEventListener('load', function () {
-      if (window.requestIdleCallback) requestIdleCallback(inject); else setTimeout(inject, 600);
-    });
-  }
-})();
-document.querySelectorAll('.vtile').forEach(function (b) {
-  b.addEventListener('click', function () {
-    var wrap = document.createElement('div');
-    wrap.className = 'vframe';
-    var f = document.createElement('iframe');
-    f.src = 'https://player.vimeo.com/video/' + b.getAttribute('data-vimeo') + '?autoplay=1&title=0&byline=0';
-    f.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
-    f.setAttribute('allowfullscreen', '');
-    f.title = b.getAttribute('aria-label') || 'LA Fitness video';
-    wrap.appendChild(f);
-    b.replaceWith(wrap);
-  });
-});
 </script>
 </body>
 </html>
