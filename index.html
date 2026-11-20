@@ -3,57 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LA Fitness SoDo Orlando FL | Gym, Pool & Free Pass</title>
-<meta name="description" content="Visit LA Fitness in SoDo Orlando at 15 W Crystal Lake St. Features indoor pool, sauna, basketball & classes. Call (321) 732-6018 for a free guest pass!">
+<title>LA Fitness Orlando FL (SoDo) | Gym, Pool & Group Classes</title>
+<meta name="description" content="Unofficial concept demo for the LA Fitness club at SoDo Shopping Center in Orlando, FL: indoor pool, group classes, personal training and sauna — facts sourced from lafitness.com.">
 <meta name="robots" content="noindex, nofollow">
 <meta property="og:title" content="LA Fitness — Orlando · Orange Ave (SoDo)">
-<meta property="og:description" content="Pool, courts, iron and classes in the heart of SoDo. Open 5 AM weekdays. Your first visit is free.">
+<meta property="og:description" content="An unofficial concept page for the Orange Ave club — pool, courts, iron and classes in the heart of SoDo. Open 5 AM weekdays.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://dior22296.github.io/la-fitness-crystal-lake-demo/">
-<meta property="og:image" content="https://dior22296.github.io/la-fitness-crystal-lake-demo/assets/club-1381.jpg">
-<meta property="og:image:width" content="1280">
-<meta property="og:image:height" content="720">
+<meta property="og:image" content="https://dior22296.github.io/la-fitness-crystal-lake-demo/assets/hero-floor.jpg">
+<meta property="og:image:width" content="1125">
+<meta property="og:image:height" content="750">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#10103E">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HealthClub",
-  "name": "LA Fitness - Orlando / Orange Ave",
-  "telephone": "+1-321-732-6018",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "15 W Crystal Lake St",
-    "addressLocality": "Orlando",
-    "addressRegion": "FL",
-    "postalCode": "32806",
-    "addressCountry": "US"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 28.514887, "longitude": -81.377225 },
-  "containedInPlace": { "@type": "Place", "name": "SoDo Shopping Center" },
-  "openingHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "05:00", "closes": "23:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "05:00", "closes": "21:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "19:00" }
-  ],
-  "specialOpeningHoursSpecification": [
-    { "@type": "OpeningHoursSpecification", "validFrom": "2026-11-26", "validThrough": "2026-11-26", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "12:00" }
-  ],
-  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "450", "bestRating": "5" },
-  "amenityFeature": [
-    { "@type": "LocationFeatureSpecification", "name": "Indoor Pool" },
-    { "@type": "LocationFeatureSpecification", "name": "Basketball Court" },
-    { "@type": "LocationFeatureSpecification", "name": "Sauna" },
-    { "@type": "LocationFeatureSpecification", "name": "Steam Room" },
-    { "@type": "LocationFeatureSpecification", "name": "Whirlpool Spa" },
-    { "@type": "LocationFeatureSpecification", "name": "Group Fitness Classes" },
-    { "@type": "LocationFeatureSpecification", "name": "Personal Training" },
-    { "@type": "LocationFeatureSpecification", "name": "Free Weights" },
-    { "@type": "LocationFeatureSpecification", "name": "Cardio Equipment" },
-    { "@type": "LocationFeatureSpecification", "name": "Locker Rooms" }
-  ]
-}
-</script>
 <style>
   :root{
     --bg:#ffffff; --bg2:#f5f6fa; --panel:#ffffff; --panel2:#eef0f7;
@@ -101,7 +62,7 @@
 
   /* ---------- HERO ---------- */
   .hero { position:relative; overflow:hidden; text-align:center;
-    background:#10103e url('assets/club-1381.jpg') center 32%/cover no-repeat; }
+    background:#10103e url('assets/hero-floor.jpg') center 32%/cover no-repeat; }
   .hero::before { content:''; position:absolute; inset:0; z-index:1;
     background:linear-gradient(180deg, rgba(10,10,42,.86), rgba(10,10,42,.62) 45%, rgba(10,10,42,.94)),
                radial-gradient(800px 420px at 50% -100px, rgba(252,177,22,.20), rgba(252,177,22,0) 60%); }
@@ -289,7 +250,7 @@
 
   /* CTA band */
   .ctaband { position:relative; text-align:center; padding:52px 22px; border-top:3px solid var(--yel); border-bottom:3px solid var(--yel);
-    background:linear-gradient(rgba(13,13,52,.93), rgba(13,13,52,.93)), url('assets/laf-free-pass-bg.jpg') center/cover no-repeat, var(--navy); }
+    background:linear-gradient(rgba(13,13,52,.93), rgba(13,13,52,.93)), var(--navy); }
   .ctaband h2 { margin-bottom:10px; color:#fff; }
   .ctaband h2 .yl { color:var(--yel); }
   .ctaband .eyebrow { color:var(--yel); }
@@ -336,6 +297,124 @@
 
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
 
+  /* ---------- V4: reveal + counters ---------- */
+  .rv { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .rv.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ .rv{ opacity:1; transform:none; transition:none; } }
+
+  /* ---------- V4: amenity explorer ---------- */
+  .xtiles { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:16px; }
+  @media (max-width:900px){ .xtiles{ grid-template-columns:repeat(3,1fr); } }
+  @media (max-width:560px){ .xtiles{ grid-template-columns:repeat(2,1fr); } }
+  .xtile { border:1.5px solid var(--line2); background:var(--panel); border-radius:12px; padding:14px 8px 11px; cursor:pointer;
+    font-family:inherit; text-align:center; color:var(--navy); transition:border-color .15s, background .15s; min-height:44px; }
+  .xtile svg { width:26px; height:26px; color:var(--yel2); display:block; margin:0 auto 6px; }
+  .xtile span { font-size:12.5px; font-weight:800; letter-spacing:.02em; line-height:1.25; display:block; }
+  .xtile:hover { border-color:var(--navy); }
+  .xtile.on { background:var(--navy); color:#fff; border-color:var(--navy); }
+  .xtile.on svg { color:var(--yel); }
+  .xpanel { display:grid; grid-template-columns:1fr 1fr; gap:0; border:1px solid var(--line); border-radius:16px; overflow:hidden;
+    box-shadow:0 12px 32px rgba(16,16,62,.08); background:var(--panel); }
+  @media (max-width:760px){ .xpanel{ grid-template-columns:1fr; } }
+  .xpanel .xmedia { min-height:280px; background:var(--navy); position:relative; }
+  .xpanel .xmedia img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
+  .xpanel .xmedia .xicon { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+  .xpanel .xmedia .xicon svg { width:84px; height:84px; color:var(--yel); opacity:.9; }
+  .xpanel .xbody { padding:26px 24px; }
+  .xpanel .xbody h3 { font-size:22px; color:var(--navy); margin-bottom:8px; }
+  .xpanel .xbody p { font-size:14.5px; line-height:1.65; color:#33335c; margin-bottom:12px; }
+  .xpanel .xbody ul { list-style:none; }
+  .xpanel .xbody li { font-size:13.5px; color:var(--mut); padding:5px 0 5px 22px; position:relative; }
+  .xpanel .xbody li::before { content:''; position:absolute; left:0; top:10px; width:12px; height:7px;
+    border-left:3px solid var(--yel2); border-bottom:3px solid var(--yel2); transform:rotate(-45deg); }
+  .xflag { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.1em; text-transform:uppercase;
+    background:var(--yel-soft); border:1px solid var(--yel2); color:var(--navy); border-radius:999px; padding:4px 10px; margin-bottom:10px; }
+
+  /* ---------- V4: format library ---------- */
+  .fmtgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:16px; }
+  .fmt { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:22px 19px;
+    box-shadow:0 8px 24px rgba(16,16,62,.06); border-top:4px solid var(--navy); }
+  .fmt h3 { font-size:16.5px; color:var(--navy); margin-bottom:4px; }
+  .fmt .fdur { display:inline-block; font-size:11px; font-weight:800; letter-spacing:.08em; color:var(--navy);
+    background:var(--yel); border-radius:999px; padding:3px 9px; margin-bottom:9px; }
+  .fmt p { font-size:13.8px; line-height:1.6; color:#3c3c64; margin-bottom:10px; }
+  .fmt .fweek { font-size:12.5px; color:var(--mut); border-top:1px dashed var(--line); padding-top:9px; line-height:1.55; }
+  .fmt .fweek b { color:var(--navy); }
+  .fmt .ftags { font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--yel2); margin-bottom:8px; }
+
+  /* ---------- V4: schedule filters ---------- */
+  .schedfilters { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:14px; }
+  .schedfilters .flabel { font-size:12px; font-weight:800; letter-spacing:.1em; text-transform:uppercase; color:var(--mut); margin-right:2px; }
+  .fchip { border:1.5px solid var(--line2); background:#fff; color:var(--navy); border-radius:999px; padding:9px 14px; min-height:44px;
+    font-size:13px; font-weight:bold; cursor:pointer; font-family:inherit; }
+  .fchip:hover { border-color:var(--navy); }
+  .fchip.on { background:var(--navy); color:#fff; border-color:var(--navy); }
+  .schedfilters select { border:1.5px solid var(--line2); border-radius:999px; padding:10px 14px; min-height:44px; font-size:13.5px;
+    font-weight:bold; color:var(--navy); background:#fff; font-family:inherit; }
+  .schedcount { font-size:13.5px; color:var(--mut); margin:0 0 12px; }
+  .schedcount b { color:var(--navy); }
+  table.sched td.dim, table.sched th.dim { opacity:.28; }
+  table.sched td.fhit .cls { color:var(--yel2); }
+  .todaylist { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:10px; margin-bottom:16px; }
+  .tcard { background:var(--navy); color:#fff; border-radius:12px; padding:14px 16px; border-bottom:3px solid var(--yel); }
+  .tcard .tt { font-size:12px; font-weight:800; letter-spacing:.12em; color:var(--yel); text-transform:uppercase; }
+  .tcard .tc { font-size:16.5px; font-weight:800; margin:3px 0 2px; }
+  .tcard .ti { font-size:13px; color:#c9cbe4; }
+  .tcard.none { background:var(--panel2); color:var(--mut); border-bottom-color:var(--line2); }
+  .tcard.none .tc { color:var(--navy); font-size:15px; }
+  td .cx { display:block; color:#b3261e; font-size:11.5px; font-weight:700; margin-top:3px; }
+
+  /* ---------- V4: terms / steps grids ---------- */
+  .fineprint { font-size:12.5px; color:var(--mut); line-height:1.65; margin-top:14px; }
+
+  /* ---------- V4: trainers ---------- */
+  .trainergrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:16px; }
+  .trainer { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px 20px; text-align:center;
+    box-shadow:0 8px 24px rgba(16,16,62,.06); }
+  .trainer .ava { width:64px; height:64px; margin:0 auto 12px; border-radius:50%; background:var(--navy); color:var(--yel);
+    font-size:21px; font-weight:900; display:flex; align-items:center; justify-content:center; letter-spacing:.03em; }
+  .trainer h3 { font-size:17px; color:var(--navy); margin-bottom:3px; }
+  .trainer .trole { font-size:11.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--yel2); margin-bottom:9px; }
+  .trainer p { font-size:13.5px; line-height:1.6; color:var(--mut); }
+
+  /* ---------- V4: reviews wall ---------- */
+  .takes { display:flex; flex-wrap:wrap; gap:9px; justify-content:center; margin-top:18px; }
+  .take { background:var(--panel2); border:1px solid var(--line); border-radius:999px; padding:9px 16px; font-size:13.5px;
+    font-style:italic; color:#33335c; }
+  .take b { color:var(--yel2); font-style:normal; }
+
+  /* ---------- V4: FAQ ---------- */
+  .faq { max-width:820px; margin:0 auto; }
+  .faq details { background:var(--panel); border:1px solid var(--line); border-radius:12px; margin-bottom:10px; overflow:hidden; }
+  .faq summary { cursor:pointer; padding:16px 18px; font-weight:800; font-size:15px; color:var(--navy); list-style:none;
+    display:flex; justify-content:space-between; align-items:center; gap:12px; min-height:44px; }
+  .faq summary::-webkit-details-marker { display:none; }
+  .faq summary::after { content:'+'; font-size:22px; color:var(--yel2); flex:none; }
+  .faq details[open ] summary::after { content:'–'; }
+  .faq details p { padding:0 18px 16px; font-size:14px; line-height:1.65; color:#3c3c64; }
+  .faq details p a { color:var(--navy); font-weight:bold; }
+
+  /* ---------- V4: nearby + members ---------- */
+  .clubgrid { display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:16px; }
+  .clubcard { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px 19px;
+    box-shadow:0 8px 24px rgba(16,16,62,.06); }
+  .clubcard h3 { font-size:15.5px; color:var(--navy); margin-bottom:5px; }
+  .clubcard p { font-size:13.5px; color:var(--mut); line-height:1.55; margin-bottom:12px; }
+  .memberband { background:var(--navy); border-radius:16px; padding:30px 26px; text-align:center; color:#fff; }
+  .memberband h3 { font-size:21px; margin-bottom:8px; }
+  .memberband p { color:#c9cbe4; font-size:14.5px; line-height:1.6; max-width:640px; margin:0 auto 18px; }
+
+  /* ---------- V4: YouTube facade ---------- */
+  .ytfacade { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:16/9; background:#000; cursor:pointer;
+    border:1px solid var(--line); margin-bottom:18px; padding:0; width:100%; display:block; }
+  .ytfacade img { width:100%; height:100%; object-fit:cover; display:block; opacity:.92; }
+  .ytfacade::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,42,.05) 45%, rgba(10,10,42,.72)); }
+  .ytfacade .vplay { position:absolute; top:50%; left:50%; transform:translate(-50%,-62%); z-index:2; width:66px; height:66px;
+    border-radius:50%; background:var(--yel); display:flex; align-items:center; justify-content:center; box-shadow:0 10px 28px rgba(0,0,0,.4); }
+  .ytfacade .vplay svg { width:28px; height:28px; color:var(--navy); margin-left:3px; }
+  .ytfacade .vlabel { position:absolute; left:16px; bottom:13px; z-index:2; color:#fff; font-weight:800; font-size:16.5px; text-align:left; }
+  .ytfacade iframe { position:absolute; inset:0; width:100%; height:100%; border:0; z-index:3; }
+
   /* ---------- AI CHATBOT ---------- */
   .chatfab { position:fixed; right:18px; bottom:18px; z-index:60; display:flex; align-items:center; gap:9px;
     background:#fff; color:var(--navy); border:2px solid var(--navy); border-radius:999px; padding:12px 18px 12px 14px;
@@ -375,6 +454,8 @@
   .chatin button { flex:none; width:42px; height:42px; border-radius:50%; border:none; background:var(--navy); color:#fff;
     cursor:pointer; display:flex; align-items:center; justify-content:center; }
   .chatin button svg { width:19px; height:19px; }
+  .heronote { max-width:660px; margin:0 auto 22px; font-size:12.5px; line-height:1.55; color:rgba(255,255,255,.88);
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.28); border-radius:12px; padding:9px 14px; }
 </style>
 </head>
 <body>
@@ -395,12 +476,14 @@
 </header>
 
 <nav class="icons" aria-label="Site sections">
-  <a href="#pillars"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Amenities</a>
+  <a href="#explore"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Amenities</a>
   <a href="#classes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Classes</a>
+  <a href="#formats"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Formats</a>
   <a href="#training"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Training</a>
   <a href="#stories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2z"/></svg>Reviews</a>
-  <a href="#visit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Visit</a>
   <a href="#pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg>Free Pass</a>
+  <a href="#faq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3A2.6 2.6 0 1 1 12 12.2c-.7.25-1 .7-1 1.5"/><circle cx="11.2" cy="17" r=".6" fill="currentColor" stroke="none"/></svg>FAQ</a>
+  <a href="#visit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Visit</a>
 </nav>
 
 <!-- ================= HERO ================= -->
@@ -414,6 +497,7 @@
       <p class="hr-text">Franco and Samantha are the best! So helpful and accommodating!!</p>
       <p class="hr-name">Codie T. — Google Review · Club Rated 4.7 ★ From 450+ Reviews</p>
     </div>
+    <p class="heronote">Unofficial concept demo — not affiliated with LA Fitness. This page doesn't sell memberships or issue guest passes; passes and memberships are handled only by the club — in person or at lafitness.com.</p>
     <span class="kick">Orlando · Orange Ave — SoDo</span>
     <h1>SoDo's Home for <span class="yl">Every Kind of Training</span></h1>
     <p class="tag">Welcome to LA Fitness — Orlando · Orange Ave. <strong>Pool, courts, iron and 16 classes a week</strong> under one roof at 15 W Crystal Lake St — open at <strong>5 AM on weekdays</strong> for the early shift, and built for every level after it.</p>
@@ -422,9 +506,10 @@
       <a class="btn btn-line" href="tel:+13217326018"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> (321) 732-6018</a>
     </div>
     <div class="stats">
-      <div class="stat"><b>4.7 <span class="yl">★</span></b><span>Google Rating · 450+ Member Reviews</span></div>
-      <div class="stat"><b>5 <span class="yl">AM</span></b><span>Weekday Open · Mon–Thu Til 11 PM</span></div>
-      <div class="stat"><b>16 <span class="yl">Classes</span></b><span>Every Week · Included With Membership</span></div>
+      <div class="stat"><b><span data-count="4.7" data-dec="1">4.7</span> <span class="yl">★</span></b><span>Google Rating · 450+ Member Reviews</span></div>
+      <div class="stat"><b><span data-count="16">16</span> <span class="yl">Classes</span></b><span>Every Week · Included With Membership</span></div>
+      <div class="stat"><b><span data-count="10">10</span> <span class="yl">Amenities</span></b><span>Pool · Court · Sauna · Steam &amp; More</span></div>
+      <div class="stat"><b><span data-count="8">8</span> <span class="yl">Formats</span></b><span>Zumba® · Yoga · Aqua Fit · Pilates…</span></div>
     </div>
   </div>
 </div>
@@ -467,15 +552,25 @@
   </div>
 </section>
 
+<!-- ================= AMENITY EXPLORER ================= -->
+<section id="explore">
+  <p class="eyebrow">Amenity Explorer</p>
+  <h2>Every Amenity, <span class="yl">Up Close</span></h2>
+  <div class="divider"></div>
+  <p class="sub">Tap any amenity for the real detail — what's here, when it's open, and what it's like. Eleven stops, including Kids Klub, shown exactly as the club lists it.</p>
+  <div class="xtiles" id="xTiles" role="tablist" aria-label="Club amenities"></div>
+  <div class="xpanel" id="xPanel" aria-live="polite"></div>
+</section>
+
 <!-- ================= FEATURE ROWS ================= -->
-<section id="training">
+<section id="tour">
   <p class="eyebrow">Take the Tour</p>
   <h2>Inside the <span class="yl">Club</span></h2>
   <div class="divider"></div>
   <p class="sub">Swim before work, run the court at lunch, lift heavy at night, recover in the sauna after. No bouncing between gyms — it's all here.</p>
 
   <div class="prog" id="pool">
-    <figure class="photo p-media" data-slot="pool"><img src="assets/laf-pool.jpg" alt="Swimmer training freestyle in an indoor lap pool — LA Fitness photo" loading="lazy"></figure>
+    <figure class="photo p-media" data-slot="pool"><img src="assets/pool.jpg" alt="Indoor swimming pool with life rings and big windows — stock photo" loading="lazy"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M8 3v13"/><path d="M16 3v13"/></svg></span><span class="p-tag">Aquatics</span></div>
       <h3>Indoor Lap Pool</h3>
@@ -490,7 +585,7 @@
   </div>
 
   <div class="prog flip" id="court">
-    <figure class="photo p-media" data-slot="court"><img src="assets/laf-courts.jpg" alt="League basketball game on the indoor court at LA Fitness" loading="lazy"></figure>
+    <figure class="photo p-media" data-slot="court"><img src="assets/court.jpg" alt="Players practicing on an indoor basketball court — stock photo" loading="lazy"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3.5 9h17"/><path d="M3.5 15h17"/></svg></span><span class="p-tag">Hoops</span></div>
       <h3>Basketball Court</h3>
@@ -505,7 +600,7 @@
   </div>
 
   <div class="prog" id="classes-row">
-    <figure class="photo p-media" data-slot="classes"><img src="assets/laf-classes.jpg" alt="Group fitness class training together in a studio — LA Fitness photo" loading="lazy"></figure>
+    <figure class="photo p-media" data-slot="classes"><img src="assets/classes.jpg" alt="Group fitness class exercising together in a studio — stock photo" loading="lazy"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="p-tag">Group Fitness</span></div>
       <h3>Classes With Real Instructors</h3>
@@ -520,7 +615,7 @@
   </div>
 
   <div class="prog flip" id="coaching">
-    <figure class="photo p-media" data-slot="training"><img src="assets/laf-training.jpg" alt="Personal trainer coaching a client during a workout — LA Fitness photo" loading="lazy"></figure>
+    <figure class="photo p-media" data-slot="training"><img src="assets/training.jpg" alt="Personal trainer coaching a client on a rowing machine — stock photo" loading="lazy"></figure>
     <div>
       <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="p-tag">One-on-One Coaching</span></div>
       <h3>Personal Training</h3>
@@ -535,25 +630,110 @@
   </div>
 </section>
 
+<!-- ================= PERSONAL TRAINING ================= -->
+<section id="training">
+  <p class="eyebrow">Personal Training</p>
+  <h2>Pro Results® <span class="yl">Personal Training</span></h2>
+  <div class="divider"></div>
+  <p class="sub">LA Fitness's Pro Results® program pairs you with a certified trainer who builds your program, tracks your progress, and keeps you accountable. Personal training is a separate agreement at an additional charge — and it starts with a complimentary fitness assessment.</p>
+
+  <div class="story-grid" style="margin-bottom:22px">
+    <div class="story">
+      <p class="s-head">The Complimentary Fitness Assessment</p>
+      <p class="s-body">Every new training relationship starts with a complimentary assessment covering five things:</p>
+      <ul>
+        <li>A certified assessment of your current fitness level</li>
+        <li>A body composition test, if desired</li>
+        <li>A personalized timeline to achieve your goals</li>
+        <li>An overview of the cardio &amp; weight equipment</li>
+        <li>A quick one-on-one workout</li>
+      </ul>
+      <p class="s-name"><b>Free to Start</b><span>Call Ahead to Schedule</span></p>
+    </div>
+    <div class="story">
+      <p class="s-head">How the Terms Work</p>
+      <p class="s-body">The short version: bring a valid ID (18+), complete the fitness analysis form first, and call ahead — it's one per person, subject to availability. The club's own pages carry the full official terms.</p>
+      <p class="s-name"><b>The Short Version</b><span>Full Terms on lafitness.com</span></p>
+    </div>
+    <div class="story">
+      <p class="s-head">Train With the App, Too</p>
+      <p class="s-body">Pro Results clients also get access to Studio Zone® workouts on the LA Fitness mobile app — your program travels with you between coached sessions, so the plan keeps moving even on solo days.</p>
+      <p class="s-name"><b>Studio Zone®</b><span>For PT Clients</span></p>
+    </div>
+  </div>
+
+  <div class="trainergrid">
+    <div class="trainer"><div class="ava">TV</div><h3>Tai V.</h3><p class="trole">Master Trainer</p><p>Master Trainer on the Orange Ave Pro Results team — the top tier of the LA Fitness coaching ladder, building programs around your goals and tracking every session with you.</p></div>
+    <div class="trainer"><div class="ava">DJ</div><h3>Dervens J.</h3><p class="trole">Master Trainer</p><p>Master Trainer on the Orange Ave Pro Results team — the top tier of the LA Fitness coaching ladder, building programs around your goals and tracking every session with you.</p></div>
+    <div class="trainer"><div class="ava">JM</div><h3>Jaiden M.</h3><p class="trole">Master Trainer</p><p>Master Trainer on the Orange Ave Pro Results team — the top tier of the LA Fitness coaching ladder, building programs around your goals and tracking every session with you.</p></div>
+    <div class="trainer"><div class="ava">SS</div><h3>Sebastian S.</h3><p class="trole">Master Trainer</p><p>Master Trainer on the Orange Ave Pro Results team — the top tier of the LA Fitness coaching ladder, building programs around your goals and tracking every session with you.</p></div>
+  </div>
+  <p class="fineprint">The wider club team also includes Club Managers, Member Services and Fitness Sales staff. Personal training rates are set by the club and confirmed in person — start with the complimentary assessment: call <a href="tel:+13217326018"><b>(321) 732-6018</b></a>.</p>
+</section>
+
+<!-- ================= CLASS FORMATS ================= -->
+<section id="formats">
+  <p class="eyebrow">Class Library</p>
+  <h2>Know Your <span class="yl">Formats</span></h2>
+  <div class="divider"></div>
+  <p class="sub">Eight formats power the schedule — what each one is, how long it runs, and when it meets this week. Durations and weekly times are the club's published facts from lafitness.com; the descriptions are summarized in our own words.</p>
+  <div class="fmtgrid">
+    <div class="fmt"><h3>Aqua Fit</h3><span class="fdur">50 MIN · IN THE POOL</span><p class="ftags">Low Impact · Joint-Friendly</p><p>A total-body pool workout using your body weight and water-resistance dumbbells in 79–85° water — especially suited to members with joint ailments or injuries.</p><p class="fweek"><b>This week:</b> Wed 8:30 AM · Blanca</p></div>
+    <div class="fmt"><h3>Body Works Plus Abs</h3><span class="fdur">55 MIN</span><p class="ftags">Strength · Total Body</p><p>High-repetition sets with light dumbbells, moved to the beat of the music — a total-body workout that finishes with dedicated abs work.</p><p class="fweek"><b>This week:</b> Tue 8:30 AM · Blanca — Sat 8:30 AM · Mauricio</p></div>
+    <div class="fmt"><h3>Yoga</h3><span class="fdur">55 MIN</span><p class="ftags">Flexibility · Core · Back</p><p>A dynamic flow built to improve flexibility while strengthening your core and back — the balance point of the weekly schedule.</p><p class="fweek"><b>This week:</b> Sun 11 AM · Darlene — Mon 11 AM · Elena — Wed 9:45 AM · Blanca — Sat 11 AM · Chrystal</p></div>
+    <div class="fmt"><h3>Mat Pilates</h3><span class="fdur">55 MIN</span><p class="ftags">Core · Balance</p><p>Mat work targeting the core — lower back and abdominals — while building flexibility and balance.</p><p class="fweek"><b>This week:</b> Tue + Thu 9:45 AM · Blanca</p></div>
+    <div class="fmt"><h3>Zumba®</h3><span class="fdur">DANCE CARDIO</span><p class="ftags">Cardio · All Levels</p><p>The international dance-inspired workout: easy-to-follow moves, high energy, and the most sessions of any format on this club's grid.</p><p class="fweek"><b>This week:</b> Mon 9:45 AM + 5:45 PM · Valdemiro — Tue 7 PM · Maria M — Thu 7 PM · Zoe — Sat 9:45 AM · Mauricio</p></div>
+    <div class="fmt"><h3>Zumba Gold®</h3><span class="fdur">LOWER IMPACT</span><p class="ftags">Cardio · Gentle Pace</p><p>All the rhythm of Zumba® at a lower-impact pace — the format built for anyone who wants the party without the pounding.</p><p class="fweek"><b>This week:</b> Tue 11 AM · Janet — Thu 11 AM · Mariuxi</p></div>
+    <div class="fmt"><h3>Cycle</h3><span class="fdur">55 MIN</span><p class="ftags">High Intensity · Studio</p><p>A high-intensity studio cycling workout — 55 minutes of climbs, sprints and endurance work on the bike.</p><p class="fweek"><b>On the club's class lineup</b> — not on this week's printed grid. Ask in club or check the app for current session times.</p></div>
+    <div class="fmt"><h3>Kickbox Cardio</h3><span class="fdur">55 MIN</span><p class="ftags">High Intensity · Striking</p><p>55 minutes of kick, punch, bob and weave — a striking-based cardio workout that hits everything.</p><p class="fweek"><b>On the club's class lineup</b> — not on this week's printed grid. Ask in club or check the app for current session times.</p></div>
+  </div>
+</section>
+
 <!-- ================= SCHEDULE ================= -->
 <section id="classes">
   <p class="eyebrow">Group Fitness</p>
   <h2>This Week's <span class="yl">Class Schedule</span></h2>
   <div class="divider"></div>
-  <p class="sub">Real classes, real instructors, every week — group fitness is included with membership at no additional charge. Today's column is highlighted.</p>
+  <p class="sub">Real classes, real instructors, every week — group fitness is included with membership at no additional charge. Filter by day or format; today's column is highlighted.</p>
+  <div class="todaylist" id="todayList" aria-label="Today's classes"></div>
+  <div class="schedfilters" id="schedFilters">
+    <span class="flabel">Day</span>
+    <button class="fchip on" data-dayfilter="all">All week</button>
+    <button class="fchip" data-dayfilter="today">Today</button>
+    <button class="fchip" data-dayfilter="0">Sun</button>
+    <button class="fchip" data-dayfilter="1">Mon</button>
+    <button class="fchip" data-dayfilter="2">Tue</button>
+    <button class="fchip" data-dayfilter="3">Wed</button>
+    <button class="fchip" data-dayfilter="4">Thu</button>
+    <button class="fchip" data-dayfilter="5">Fri</button>
+    <button class="fchip" data-dayfilter="6">Sat</button>
+    <span class="flabel" style="margin-left:8px">Format</span>
+    <select id="fmtFilter" aria-label="Filter by class format">
+      <option value="all">All formats</option>
+      <option>Zumba®</option>
+      <option>Zumba Gold®</option>
+      <option>Yoga</option>
+      <option>Mat Pilates</option>
+      <option>Body Works Plus Abs</option>
+      <option>Aqua Fit</option>
+      <option>Cycle</option>
+      <option>Kickbox Cardio</option>
+    </select>
+  </div>
+  <p class="schedcount" id="schedCount"></p>
   <div class="schedwrap">
     <table class="sched" id="schedTable" aria-label="Weekly class schedule">
       <thead><tr><th>Time</th><th data-day="0">Sun</th><th data-day="1">Mon</th><th data-day="2">Tue</th><th data-day="3">Wed</th><th data-day="4">Thu</th><th data-day="5">Fri</th><th data-day="6">Sat</th></tr></thead>
       <tbody>
         <tr><th>8:30 AM</th><td data-day="0"></td><td data-day="1"></td><td data-day="2"><span class="cls">Body Works Plus Abs</span><span class="ins">Blanca</span></td><td data-day="3"><span class="cls">Aqua Fit</span><span class="ins">Blanca</span></td><td data-day="4"></td><td data-day="5"></td><td data-day="6"><span class="cls">Body Works Plus Abs</span><span class="ins">Mauricio</span></td></tr>
         <tr><th>9:45 AM</th><td data-day="0"></td><td data-day="1"><span class="cls">Zumba®</span><span class="ins">Valdemiro</span></td><td data-day="2"><span class="cls">Mat Pilates</span><span class="ins">Blanca</span></td><td data-day="3"><span class="cls">Yoga</span><span class="ins">Blanca</span></td><td data-day="4"><span class="cls">Mat Pilates</span><span class="ins">Blanca</span></td><td data-day="5"></td><td data-day="6"><span class="cls">Zumba®</span><span class="ins">Mauricio</span></td></tr>
-        <tr><th>11:00 AM</th><td data-day="0"><span class="cls">Yoga</span><span class="ins">Darlene</span></td><td data-day="1"><span class="cls">Yoga</span><span class="ins">Elena</span></td><td data-day="2"><span class="cls">Zumba Gold®</span><span class="ins">Janet</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba Gold®</span><span class="ins">Mariuxi</span></td><td data-day="5"></td><td data-day="6"><span class="cls">Yoga</span><span class="ins">Chrystal</span></td></tr>
+        <tr><th>11:00 AM</th><td data-day="0"><span class="cls">Yoga</span><span class="ins">Darlene</span></td><td data-day="1"><span class="cls">Yoga</span><span class="ins">Elena</span></td><td data-day="2"><span class="cls">Zumba Gold®</span><span class="ins">Janet</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba Gold®</span><span class="ins">Mariuxi</span><span class="cx">Cancelled Thu Nov 26 only — Thanksgiving</span></td><td data-day="5"></td><td data-day="6"><span class="cls">Yoga</span><span class="ins">Chrystal</span></td></tr>
         <tr><th>5:45 PM</th><td data-day="0"></td><td data-day="1"><span class="cls">Zumba®</span><span class="ins">Valdemiro</span></td><td data-day="2"></td><td data-day="3"></td><td data-day="4"></td><td data-day="5"></td><td data-day="6"></td></tr>
-        <tr><th>7:00 PM</th><td data-day="0"></td><td data-day="1"></td><td data-day="2"><span class="cls">Zumba®</span><span class="ins">Maria M</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba®</span><span class="ins">Zoe</span></td><td data-day="5"></td><td data-day="6"></td></tr>
+        <tr><th>7:00 PM</th><td data-day="0"></td><td data-day="1"></td><td data-day="2"><span class="cls">Zumba®</span><span class="ins">Maria M</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba®</span><span class="ins">Zoe</span><span class="cx">Cancelled Thu Nov 26 only — Thanksgiving</span></td><td data-day="5"></td><td data-day="6"></td></tr>
       </tbody>
     </table>
   </div>
-  <p class="schednote">Schedule as published on lafitness.com (last updated Nov 11, 2026) — instructors and times can change, so confirm in club or on the LA Fitness app before you head over. Thanksgiving Day (Thu, Nov 26) the club runs holiday hours, 8 AM–12 PM, and some classes are cancelled.</p>
+  <p class="schednote">Schedule as published on lafitness.com (last updated Nov 11, 2026) — instructors and times can change, so confirm in club or on the LA Fitness app before you head over. Thanksgiving Day (Thu, Nov 26) the club runs holiday hours, 8 AM–12 PM, and the grid marks two Thursday classes cancelled that day only: Zumba Gold® at 11 AM and Zumba® at 7 PM.</p>
 </section>
 
 <!-- ================= HOW IT WORKS ================= -->
@@ -561,15 +741,20 @@
   <p class="eyebrow">Watch</p>
   <h2>See It <span class="yl">In Motion</span></h2>
   <div class="divider"></div>
-  <p class="sub">LA Fitness's own tour and class videos — the floor, the pool, the courts and the coaching, exactly as the club films them. Tap any tile to watch.</p>
-  <p class="vidnote">Full tour videos play on LA Fitness's official channels — each tile opens the video on Vimeo in a new tab.</p>
+  <p class="sub">The club's tour and class videos live on LA Fitness's official channels — nothing is hosted here. Start with the club tour below, or open a tour on their Vimeo in a new tab.</p>
+  <p class="vidnote">Start with the official club tour on LA Fitness's YouTube channel — it plays right here. The deeper tour videos open on LA Fitness's official Vimeo in a new tab.</p>
+  <button class="ytfacade" id="ytFacade" aria-label="Play the official LA Fitness club tour video from YouTube">
+    <img src="assets/hero-floor.jpg" alt="Inside a gym training floor — official LA Fitness club tour video" loading="lazy">
+    <span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+    <span class="vlabel">Watch: The Official Club Tour</span>
+  </button>
   <div class="videogrid">
-    <a class="vtile" href="https://vimeo.com/531020893" target="_blank" rel="noopener" aria-label="Watch the weight room tour video on Vimeo (opens in a new tab)"><img src="assets/laf-weight-room.jpg" alt="Member training with dumbbells in the free-weight area at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Weight Room</span></a>
-    <a class="vtile" href="https://vimeo.com/531020567" target="_blank" rel="noopener" aria-label="Watch the pool tour video on Vimeo (opens in a new tab)"><img src="assets/laf-pool.jpg" alt="Swimmer in the indoor lap pool" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Pool</span></a>
-    <a class="vtile" href="https://vimeo.com/531020114" target="_blank" rel="noopener" aria-label="Watch the courts and leagues video on Vimeo (opens in a new tab)"><img src="assets/laf-courts.jpg" alt="League basketball at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Courts &amp; Leagues</span></a>
-    <a class="vtile" href="https://vimeo.com/589467508" target="_blank" rel="noopener" aria-label="Watch the personal training video on Vimeo (opens in a new tab)"><img src="assets/laf-training.jpg" alt="Personal training session at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Personal Training</span></a>
-    <a class="vtile" href="https://vimeo.com/531019529" target="_blank" rel="noopener" aria-label="Watch the cardio tour video on Vimeo (opens in a new tab)"><img src="assets/laf-cardio.jpg" alt="Cardio floor at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Cardio Floor</span></a>
-    <a class="vtile" href="https://vimeo.com/1080601203" target="_blank" rel="noopener" aria-label="Watch the Zumba class video on Vimeo (opens in a new tab)"><img src="assets/laf-classes.jpg" alt="Zumba group fitness class" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Zumba® Class</span></a>
+    <a class="vtile" href="https://vimeo.com/531020893" target="_blank" rel="noopener" aria-label="Watch the weight room tour video on Vimeo (opens in a new tab)"><img src="assets/hero-floor.jpg" alt="Gym training floor — stock photo" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Weight Room</span></a>
+    <a class="vtile" href="https://vimeo.com/531020567" target="_blank" rel="noopener" aria-label="Watch the pool tour video on Vimeo (opens in a new tab)"><img src="assets/pool.jpg" alt="Indoor swimming pool — stock photo" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Pool</span></a>
+    <a class="vtile" href="https://vimeo.com/531020114" target="_blank" rel="noopener" aria-label="Watch the courts and leagues video on Vimeo (opens in a new tab)"><img src="assets/court.jpg" alt="Indoor basketball court — stock photo" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Courts &amp; Leagues</span></a>
+    <a class="vtile" href="https://vimeo.com/589467508" target="_blank" rel="noopener" aria-label="Watch the personal training video on Vimeo (opens in a new tab)"><img src="assets/training.jpg" alt="Personal training session — stock photo" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Personal Training</span></a>
+    <a class="vtile" href="https://vimeo.com/531019529" target="_blank" rel="noopener" aria-label="Watch the cardio tour video on Vimeo (opens in a new tab)"><img src="assets/hero-floor.jpg" alt="Cardio floor — stock photo" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Cardio Floor</span></a>
+    <a class="vtile" href="https://vimeo.com/1080601203" target="_blank" rel="noopener" aria-label="Watch the Zumba class video on Vimeo (opens in a new tab)"><img src="assets/classes.jpg" alt="Group fitness class — stock photo" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Zumba® Class</span></a>
   </div>
 </section>
 
@@ -579,9 +764,9 @@
   <div class="divider"></div>
   <p class="sub">No pressure and no guesswork. Here's exactly how a first visit works.</p>
   <div class="steps">
-    <div class="step"><div class="num">1</div><h3>Claim Your Free Pass</h3><p>Call (321) 732-6018 and ask for a free guest pass. The club team will set it up — no form, no obligation.</p></div>
-    <div class="step"><div class="num">2</div><h3>Tour &amp; Train</h3><p>Walk the floor, take a class, swim a few laps, finish in the sauna. Try the whole club the way members actually use it.</p></div>
-    <div class="step"><div class="num">3</div><h3>Pick Your Plan at the Club</h3><p>Membership options and current offers vary, so the club team walks you through today's offers in person — straight, with nothing hidden.</p></div>
+    <div class="step"><div class="num">1</div><h3>Claim Your Free 3-Day Pass</h3><p>Request it on LA Fitness's official free-pass page, or pick one up in person at the club. It's free for you — and it covers a friend, too.</p></div>
+    <div class="step"><div class="num">2</div><h3>Activate &amp; Get Oriented</h3><p>Bring a current photo ID and follow the club's activation steps — its official pass page lists exactly what's required before your first session.</p></div>
+    <div class="step"><div class="num">3</div><h3>Train Free for 3 Days</h3><p>Once activated, your pass runs 3 consecutive days: floor, classes, pool, court, sauna. Then decide about membership with the club team — straight, nothing hidden.</p></div>
   </div>
 </section>
 
@@ -602,7 +787,7 @@
     <div class="story">
       <div class="score">4.7</div>
       <div class="stars" aria-hidden="true">★★★★★</div>
-      <p class="plain">From <b>450+ Google reviews</b> for the Crystal Lake club — one of the strongest-rated full-service gyms in South Downtown Orlando.</p>
+      <p class="plain">From <b>450+ Google reviews</b> for the Crystal Lake club — a strong score for a full-service gym in South Downtown Orlando.</p>
       <p class="s-name"><b>Google Rating</b><span>Orange Ave · 32806</span></p>
     </div>
     <div class="story">
@@ -617,12 +802,13 @@
       <p class="s-name"><b>What Members Come For</b><span>Review Themes</span></p>
     </div>
   </div>
+  <p class="fineprint" style="text-align:center">The rating and the member quote above come from this club's public Google reviews — read the rest there.</p>
 </section>
 
 <!-- ================= ABOUT ================= -->
 <section id="about">
   <div class="aboutgrid">
-    <figure class="photo" data-slot="about-club"><img src="assets/club-1381.jpg" alt="The actual LA Fitness Orlando–Orange Ave club building in SoDo, Orlando" loading="lazy"></figure>
+    <figure class="photo" data-slot="about-club"><img src="assets/training.jpg" alt="A coach working one-on-one with a member — stock photo" loading="lazy"></figure>
     <div class="abouttxt">
       <p class="eyebrow">About the Club</p>
       <h2>Built for <span class="yl">South Downtown</span></h2>
@@ -650,6 +836,73 @@
   </div>
 </div>
 
+<!-- ================= PASS TERMS ================= -->
+<section id="pass-terms">
+  <p class="eyebrow">Guest Pass — The Details</p>
+  <h2>The Free 3-Day Pass, <span class="yl">In Brief</span></h2>
+  <div class="divider"></div>
+  <p class="sub">The short version: LA Fitness publishes a free 3-day guest pass for non-members — it covers you and a friend, and it runs 3 consecutive days once activated. This page doesn't issue passes and doesn't reproduce the club's terms — the pass itself and its full official terms live only on LA Fitness's own pass page and at the club.</p>
+  <div class="ctas" style="justify-content:center;margin-top:18px">
+    <a class="btn btn-navy" href="https://www.lafitness.com/Pages/FreePass.aspx" target="_blank" rel="noopener">Read the Terms &amp; Get the Pass on lafitness.com</a>
+    <a class="btn btn-line" href="tel:+13217326018">Call (321) 732-6018</a>
+  </div></section>
+
+<!-- ================= KIDS KLUB ================= -->
+<section id="kids">
+  <p class="eyebrow">Kids Klub</p>
+  <h2>Childcare, <span class="yl">Honestly Listed</span></h2>
+  <div class="divider"></div>
+  <div class="alert" style="max-width:760px;margin:0 auto;text-align:left"><b>Kids Klub is currently CLOSED at the Orange Ave club</b> — the club's own page lists it closed Monday through Sunday. Kids Klub is LA Fitness's in-club babysitting service (an extra-charge amenity where offered); the moment this club reopens it, this page will say so. For the latest, call <a href="tel:+13217326018"><b>(321) 732-6018</b></a> — and please plan your visit accordingly in the meantime.</div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section id="faq">
+  <p class="eyebrow">Good Questions</p>
+  <h2>Before You <span class="yl">Come In</span></h2>
+  <div class="divider"></div>
+  <div class="faq">
+    <details><summary>What are the club's hours?</summary><p>Mon–Thu 5:00 AM–11:00 PM, Fri 5:00 AM–9:00 PM, Sat–Sun 8:00 AM–7:00 PM. Thanksgiving Day (Thu, Nov 26, 2026) runs special hours: 8:00 AM–12:00 PM. The status pill at the top of this page always shows whether the club is open right now.</p></details>
+    <details><summary>How does the free guest pass work?</summary><p>It's a free 3-day pass for you and a friend, for non-members. Activate it within 30 days of issue; once activated it's good for 3 consecutive days. One pass per person every six months. Request it on the <a href="https://www.lafitness.com/Pages/FreePass.aspx" target="_blank" rel="noopener">official pass page</a>, pick one up at the club, or call <a href="tel:+13217326018">(321) 732-6018</a>. The club's full official terms are on its pass page.</p></details>
+    <details><summary>How old do you have to be to use a guest pass?</summary><p>16 or older on your own — or 13+ when accompanied by a parent or legal guardian, who signs the under-18 waiver. Bring a current picture ID with your birth date either way.</p></details>
+    <details><summary>Are group classes included with membership?</summary><p>Yes — the club lists group fitness classes as included at no additional charge. That's all 16 weekly sessions across Zumba®, Yoga, Mat Pilates, Aqua Fit, Body Works Plus Abs and Zumba Gold®.</p></details>
+    <details><summary>What is the complimentary fitness assessment?</summary><p>It's the free starting point for personal training: a certified assessment of your fitness level, a body composition test if you want one, a personalized goal timeline, an equipment overview, and a quick one-on-one workout. 18+ with valid ID, one per person — call ahead to schedule.</p></details>
+    <details><summary>Does personal training cost extra?</summary><p>Yes — the club lists personal training with an asterisk: it's a separate agreement at an additional charge, and rates are confirmed at the club. The fitness assessment that starts it is complimentary.</p></details>
+    <details><summary>Is Kids Klub open?</summary><p>Not right now — this club lists Kids Klub closed Monday through Sunday. It's LA Fitness's in-club babysitting service where offered. Call the club for the latest before planning a visit around it.</p></details>
+    <details><summary>Where do I park?</summary><p>The club sits inside the SoDo Shopping Center at 15 W Crystal Lake St, just south of downtown off S Orange Ave, with surface parking at the center. Tap Get Directions in the Visit section below and your maps app handles the rest.</p></details>
+    <details><summary>What should I bring on my first visit?</summary><p>A current picture ID with your birth date and workout gear. Guest-pass visits start with a signed waiver plus a fitness analysis and orientation with a membership counselor — then the club is yours: floor, class, pool, sauna.</p></details>
+    <details><summary>I'm already a member — where's my account?</summary><p>Member accounts live on LA Fitness's own systems, not on this concept page. Manage your membership at <a href="https://www.lafitness.com" target="_blank" rel="noopener">lafitness.com</a> or in the LA Fitness mobile app — Pro Results clients also get Studio Zone® there.</p></details>
+  </div>
+</section>
+
+<!-- ================= NEARBY CLUBS ================= -->
+<section id="nearby">
+  <p class="eyebrow">More Clubs Nearby</p>
+  <h2>Other Orlando-Area <span class="yl">Locations</span></h2>
+  <div class="divider"></div>
+  <p class="sub">Orange Ave is home base — but LA Fitness has more Orlando-area clubs if another side of town fits your day better.</p>
+  <div class="clubgrid">
+    <div class="clubcard"><h3>Colonial Drive East</h3><p>2999 E Colonial Dr<br>Orlando, FL 32803</p><a class="mini ghost" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+2999+E+Colonial+Dr+Orlando+FL+32803" target="_blank" rel="noopener">Directions</a></div>
+    <div class="clubcard"><h3>Conway – Michigan</h3><p>4550 E Michigan St<br>Orlando, FL 32812</p><a class="mini ghost" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+4550+E+Michigan+St+Orlando+FL+32812" target="_blank" rel="noopener">Directions</a></div>
+    <div class="clubcard"><h3>Orlando Metro West</h3><p>4792 S Kirkman Rd<br>Orlando, FL 32811</p><a class="mini ghost" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+4792+S+Kirkman+Rd+Orlando+FL+32811" target="_blank" rel="noopener">Directions</a></div>
+    <div class="clubcard"><h3>Winter Park</h3><p>501 N Orlando Ave, Unit 219<br>Winter Park, FL 32789</p><a class="mini ghost" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+501+N+Orlando+Ave+Winter+Park+FL+32789" target="_blank" rel="noopener">Directions</a></div>
+    <div class="clubcard"><h3>Waterford Lakes</h3><p>815 Alafaya Trail<br>Orlando, FL 32828</p><a class="mini ghost" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+815+Alafaya+Trail+Orlando+FL+32828" target="_blank" rel="noopener">Directions</a></div>
+    <div class="clubcard"><h3>Oviedo</h3><p>199 Mitchell Hammock Rd<br>Oviedo, FL 32765</p><a class="mini ghost" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+199+Mitchell+Hammock+Rd+Oviedo+FL+32765" target="_blank" rel="noopener">Directions</a></div>
+  </div>
+  <p class="fineprint" style="text-align:center;margin-top:16px">Find every location in the club's official locator: <a href="https://www.lafitness.com/Pages/FindClubResultsZip.aspx?zipCode=32806" target="_blank" rel="noopener"><b>lafitness.com — clubs near 32806</b></a></p>
+</section>
+
+<!-- ================= MEMBERS ================= -->
+<section id="members">
+  <div class="memberband">
+    <h3>Already a Member?</h3>
+    <p>Your account, billing and the LA Fitness app live on the club's official systems — this concept page never asks for your login. Jump straight to the real thing:</p>
+    <div class="ctas" style="justify-content:center">
+      <a class="btn btn-yel" href="https://www.lafitness.com" target="_blank" rel="noopener">Member Services at lafitness.com</a>
+      <a class="btn btn-line" href="https://www.instagram.com/lafitness" target="_blank" rel="noopener">@lafitness on Instagram</a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= VISIT ================= -->
 <section id="visit">
   <p class="eyebrow">Visit Us</p>
@@ -669,7 +922,7 @@
     <div class="vcard">
       <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Find Us in SoDo</h3>
       <p class="addr"><strong>LA Fitness — Orlando · Orange Ave</strong><br>15 W Crystal Lake St<br>Orlando, FL 32806</p>
-      <p class="addr-note">Inside the SoDo Shopping Center, just south of downtown off S Orange Ave. Free parking on site.</p>
+      <p class="addr-note">Inside the SoDo Shopping Center, just south of downtown off S Orange Ave. Surface parking at the center.</p>
       <a class="mini" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+15+W+Crystal+Lake+St+Orlando+FL+32806" target="_blank" rel="noopener">Get Directions</a>
       <a class="mini ghost" href="tel:+13217326018">Call the Club</a>
       <div class="alert blue"><b>Kids Klub:</b> childcare is <b>currently closed</b> at this club. We'll update this page the moment it reopens — please plan your visit accordingly.</div>
@@ -684,10 +937,10 @@
   <p class="faddr">15 W Crystal Lake St, Orlando, FL 32806<br>
   <a href="tel:+13217326018">(321) 732-6018</a> · Mon–Thu 5 AM–11 PM · Fri 5 AM–9 PM · Sat–Sun 8 AM–7 PM</p>
   <div class="fnav">
-    <a href="#pillars">Amenities</a><a href="#classes">Classes</a><a href="#training">Tour</a><a href="#stories">Reviews</a><a href="#about">About</a><a href="#visit">Visit</a><a href="#pass">Free Pass</a>
+    <a href="#explore">Amenities</a><a href="#classes">Classes</a><a href="#formats">Formats</a><a href="#training">Training</a><a href="#stories">Reviews</a><a href="#pass">Free Pass</a><a href="#faq">FAQ</a><a href="#nearby">Nearby Clubs</a><a href="#visit">Visit</a>
   </div>
-  <p class="fsmall">Concept demo — not affiliated with or endorsed by LA Fitness. This page is a design concept built by Pinnacle Tech to show what a modern club page can be. Club facts (hours, amenities, class schedule, phone) were sourced from lafitness.com on Nov 20, 2026 and can change — confirm details with the club. Photography and video are LA Fitness's own, via lafitness.com (credited below) — the building shown is this club's actual location; the sauna photo is stock, credited below. Membership pricing is set by the club and is not published here.<br><span class="credit">Built by Pinnacle Tech, Orlando FL</span></p>
-  <p class="fcredits">Photo &amp; video credits: Club exterior (this location), pool, courts, classes, personal training, weight room and cardio photography, the free-pass band image, and all videos — © LA Fitness / Fitness International, LLC, via lafitness.com and LA Fitness's official Vimeo. Sauna photo — Max Vakhtbovych via Pexels (free to use under the Pexels License).</p>
+  <p class="fsmall">Concept demo — not affiliated with or endorsed by LA Fitness. This page is a design concept built by Pinnacle Tech to show what a modern club page can be. Club facts (hours, amenities, class schedule and grid, class formats, trainer names, Kids Klub status, registration no. HS15718) were sourced from lafitness.com's official club, class, personal training and free-pass pages on Nov 20, 2026 and can change — confirm details with the club. Photography is licensed stock (credited below) — it shows the kind of spaces and training this club offers, not the actual club. Videos are LA Fitness's own, embedded from or linked to their official channels; no video files are hosted here. Guest passes and memberships are handled only by LA Fitness — this page issues neither and never asks for a member login. Membership pricing is set by the club and is not published here.<br><span class="credit">Built by Pinnacle Tech, Orlando FL</span></p>
+  <p class="fcredits">Photo credits — all stock photography via Pexels (free to use under the Pexels License): gym floor — Denys Gromov · pool — Şahin Sezer Dinçer · basketball court — Piotr Arnoldes · group class — Andrea Piacquadio · personal training — Andres Ayrton · sauna — Max Vakhtbovych. Video: the club tour and the tour/class videos are LA Fitness's own, embedded from or linked to LA Fitness's official YouTube and Vimeo channels — no video files are hosted on this page.</p>
 </footer>
 
 <!-- ================= AI CHATBOT ================= -->
@@ -712,6 +965,9 @@
     <button class="chip" data-q="What classes are on today?">Classes today</button>
     <button class="chip" data-q="How do I get a free pass?">Free pass</button>
     <button class="chip" data-q="Is Kids Klub open?">Kids Klub</button>
+    <button class="chip" data-q="What is the fitness assessment?">Assessment</button>
+    <button class="chip" data-q="Who are the trainers?">Trainers</button>
+    <button class="chip" data-q="What are the guest pass terms?">Pass terms</button>
     <button class="chip hot" data-q="How much is a membership?">Membership</button>
   </div>
   <form class="chatin" id="chatForm">
@@ -788,22 +1044,40 @@ function brainAnswer(club, rawQ, now){
   const todayCls = classesForDay(now.day);
 
   if(has("kids klub", "kids club", "childcare", "child care", "daycare", "babysit", "children", "kids"))
-    return "Honest answer: Kids Klub childcare is currently CLOSED at the Orange Ave club. I don't want you making a trip expecting it — the club team can tell you the latest at " + club.phoneDisplay + ". Everything else at the club is running as normal.";
+    return "Honest answer: Kids Klub — LA Fitness's in-club babysitting service (an extra-charge amenity where it's offered) — is currently CLOSED at the Orange Ave club; the club lists it closed Monday through Sunday. I don't want you making a trip expecting it — the club team can tell you the latest at " + club.phoneDisplay + ". Everything else at the club is running as normal.";
+
+  if(has("how old", "age", "teen", "minor", "13", "16", "young"))
+    return "For a guest pass: 16 or older on your own, or 13+ accompanied by a parent or legal guardian (who signs the under-18 waiver) — and bring a current picture ID with your birth date. For the complimentary fitness assessment you need to be 18+ with a valid ID. Membership age rules are confirmed at sign-up in the club.";
 
   if(has("thanksgiving", "holiday", "christmas", "new year"))
-    return "For Thanksgiving (Thursday, Nov 26) the club runs special holiday hours: 8:00 AM – 12:00 PM, and a few classes are cancelled that day. Other holidays can vary — for a specific date, call the club at " + club.phoneDisplay + ".";
+    return "For Thanksgiving (Thursday, Nov 26) the club runs special holiday hours: 8:00 AM – 12:00 PM, and the class grid marks two Thursday classes cancelled that day only — Zumba Gold® at 11:00 AM and Zumba® at 7:00 PM. Other holidays can vary — for a specific date, call the club at " + club.phoneDisplay + ".";
+
+  if(has("assessment", "fitness analysis", "body composition", "fitness evaluation"))
+    return "The club offers a complimentary fitness assessment to start personal training. It includes five things: a certified assessment of your current fitness level, a body composition test if you want one, a personalized timeline for your goals, an overview of the cardio and weight equipment, and a quick one-on-one workout. To book yours, call the club team at " + club.phoneDisplay + ".";
+
+  if(has("nearby", "other club", "other location", "another club", "winter park", "colonial", "kirkman", "michigan"))
+    return "More LA Fitness clubs nearby: Colonial Drive East (2999 E Colonial Dr, Orlando 32803), Conway–Michigan (4550 E Michigan St, Orlando 32812), Orlando Metro West (4792 S Kirkman Rd, Orlando 32811), Winter Park (501 N Orlando Ave, Unit 219, Winter Park 32789), Waterford Lakes (815 Alafaya Trail, Orlando 32828) and Oviedo (199 Mitchell Hammock Rd, Oviedo 32765). The Nearby section of this page has directions links for each.";
+
+  if(has("my account", "log in", "login", "log-in", "member account", "the app", "studio zone", "billing"))
+    return "Member accounts live on LA Fitness's own systems — this page never handles logins. Manage your membership at lafitness.com or in the LA Fitness mobile app; Pro Results personal training clients also get Studio Zone® workouts in the app. For account help, the club team is at " + club.phoneDisplay + ".";
 
   if(has("how much", "price", "pricing", "cost", "membership", "join", "sign up", "sign-up", "fee", "dues", "contract", "cancel"))
     return "Membership options and current offers change, so I don't quote rates here — the club team will walk you through today's offers with nothing hidden. Best first step: your first visit is FREE with a guest pass. Call " + club.phoneDisplay + " and they'll set it up.";
 
-  if(has("guest pass", "free pass", "pass", "trial", "try it", "first visit", "tour"))
-    return "Yes — the club offers a free guest pass so you can try everything first: the floor, a class, the pool, the sauna. Call " + club.phoneDisplay + " to claim yours, then just show up ready to train. We're at " + club.address + ".";
+  if(has("guest pass", "free pass", "pass", "trial", "try it", "first visit", "tour", "friend"))
+    return "Yes — LA Fitness publishes a free 3-day guest pass for non-members (it covers a friend, too, and runs 3 consecutive days once activated). This page doesn't issue passes — the pass itself and its full official terms are on LA Fitness's pass page at lafitness.com, or pick one up at the club. Questions? Call " + club.phoneDisplay + ". We're at " + club.address + ".";
+
+  if(has("aqua fit", "aqua aerobics", "water aerobics", "water class"))
+    return "Aqua Fit is the club's pool class: a 50-minute total-body workout in the indoor pool using body weight and water-resistance dumbbells — the water runs 79–85°, and the format is especially suited to joint ailments and injuries. It meets Wednesdays at 8:30 AM with Blanca, and it's included with membership.";
 
   if(has("pool", "swim", "lap", "aqua"))
     return "Yes — there's an indoor lap pool, open every club hour, so weather never cancels a swim. Aqua Fit runs Wednesdays at 8:30 AM with Blanca, and the whirlpool spa is right there for after. " + (st.open ? "The club is open right now if you want to come see it." : "The club is closed right now — " + st.text.toLowerCase() + ".");
 
   if(has("sauna", "steam", "whirlpool", "spa", "jacuzzi", "hot tub", "recover"))
     return "All three: sauna, steam room AND a whirlpool spa — plus full locker rooms. Members call the sauna the perfect ending to a session. They're open every club hour.";
+
+  if(has("racquetball"))
+    return "No — racquetball isn't on this club's amenity list. The court here is a full indoor basketball court — pickup runs and shooting work, open during club hours. For anything else, the club team can confirm at " + club.phoneDisplay + ".";
 
   if(has("basketball", "hoops", "court", "pickup", "b-ball"))
     return "There's a full indoor basketball court — pickup runs, shooting work, rain or shine. It's open during club hours; bring your game by anytime we're open. Today that's " + fmtHour(hoursFor(club, now).range[0]) + " – " + fmtHour(hoursFor(club, now).range[1]) + ".";
@@ -820,8 +1094,11 @@ function brainAnswer(club, rawQ, now){
   if(has("pilates"))
     return "Mat Pilates runs Tuesdays and Thursdays at 9:45 AM, both with Blanca. Included with membership at no additional charge.";
 
-  if(has("cycle", "spin", "kickbox", "body works"))
-    return "Cycle, Kickbox Cardio and Body Works Plus Abs are all part of the class lineup here. Body Works Plus Abs is on the current grid Tuesdays and Saturdays at 8:30 AM. For the latest Cycle and Kickbox slots, check the full schedule on this page or the LA Fitness app — the grid updates as instructors change.";
+  if(has("body works"))
+    return "Body Works Plus Abs is a 55-minute total-body class — high-repetition sets with light dumbbells moved to the beat, finishing with abs. It's on the grid Tuesdays and Saturdays at 8:30 AM (Blanca on Tuesdays, Mauricio on Saturdays), included with membership.";
+
+  if(has("cycle", "spin", "kickbox"))
+    return "Cycle (55-minute high-intensity studio cycling) and Kickbox Cardio (55 minutes of kick, punch, bob and weave) are both featured formats on this club's class lineup — but neither is on this week's printed grid. Session times rotate, so ask in club or check the LA Fitness app for the current slots.";
 
   if(has("class", "schedule", "today"))
     return (todayCls.length
@@ -829,14 +1106,17 @@ function brainAnswer(club, rawQ, now){
       : "No group classes are on the grid today (" + DAYNAMES[now.day] + ") — the floor, pool and court are all open though.") +
       "\nGroup fitness is included with membership at no additional charge. Full weekly grid is in the Classes section of this page.";
 
+  if(has("tai", "dervens", "jaiden", "sebastian", "master trainer", "who are the trainers", "trainers"))
+    return "This club's training team includes four Master Trainers — the top tier on the LA Fitness coaching ladder: Tai V. Dervens J., Jaiden M. and Sebastian S. They coach through the Pro Results® personal training program. Personal training is a separate agreement at an additional charge, and it starts with a complimentary fitness assessment — call " + club.phoneDisplay + " to book one.";
+
   if(has("train", "coach", "pt ", "personal"))
-    return "Personal training is a strength here — the team includes four Master Trainers (" + club.trainers.join(", ") + "), the top tier on the LA Fitness coaching ladder. They'll build a program around your goals and track it with you. Call " + club.phoneDisplay + " to talk through options, or start with a free guest pass and meet the team.";
+    return "Personal training here is Pro Results® — the team includes four Master Trainers (" + club.trainers.join(", ") + "), the top tier on the LA Fitness coaching ladder. They'll build a program around your goals and track it with you, and PT clients also get Studio Zone® workouts in the LA Fitness app. It starts with a complimentary fitness assessment; training itself is a separate agreement at an additional charge. Call " + club.phoneDisplay + " to talk through options.";
 
   if(has("hour", "open", "close", "when", "time"))
     return "Today (" + DAYNAMES[now.day] + ") we're open " + fmtHour(hoursFor(club, now).range[0]) + " – " + fmtHour(hoursFor(club, now).range[1]) + (hoursFor(club, now).special ? " — special " + hoursFor(club, now).special + " hours" : "") + ", and right now we are " + (st.open ? "OPEN" : "CLOSED") + ".\nFull week: Mon–Thu 5:00 AM–11:00 PM · Fri 5:00 AM–9:00 PM · Sat–Sun 8:00 AM–7:00 PM.";
 
   if(has("where", "address", "direction", "park", "location", "get there", "map"))
-    return "You'll find us at " + club.address + " — inside the " + club.area + ", just off S Orange Ave. There's free parking on site. Tap Get Directions in the Visit section and your maps app will take it from there.";
+    return "You'll find us at " + club.address + " — inside the " + club.area + ", just off S Orange Ave, with surface parking at the center. Tap Get Directions in the Visit section and your maps app will take it from there.";
 
   if(has("phone", "call", "contact", "number", "talk to"))
     return "You can reach the club team at " + club.phoneDisplay + " — or just tap the Call button at the top of this page. Hours today: " + fmtHour(hoursFor(club, now).range[0]) + " – " + fmtHour(hoursFor(club, now).range[1]) + ".";
@@ -884,6 +1164,199 @@ function clubNow(){
     const days = (tr.dataset.days || "").split(",").map(Number);
     if(days.includes(now.day)) tr.classList.add("today");
   });
+})();
+
+/* ---------- V4: amenity explorer ---------- */
+const AMEN = [
+  { id:"pool", name:"Indoor Lap Pool", img:"assets/pool.jpg", alt:"Indoor swimming pool",
+    icon:'<path d="M2 12c2.5 0 2.5 1.8 5 1.8S9.5 12 12 12s2.5 1.8 5 1.8 2.5-1.8 5-1.8"/><path d="M2 17.5c2.5 0 2.5 1.8 5 1.8s2.5-1.8 5-1.8 2.5 1.8 5 1.8 2.5-1.8 5-1.8"/><circle cx="15.5" cy="5.5" r="2"/><path d="M8 9.5 12 5l2.5 2"/>',
+    body:"A real indoor lap pool — the amenity most Orlando gyms simply don't have. Swim laps, cross-train around an injury, or take the weekly Aqua Fit class, any day the club is open.",
+    facts:["Open every club hour — weather never cancels it","Aqua Fit: Wednesdays 8:30 AM with Blanca, in 79–85° water","Whirlpool spa right poolside for after","Low-impact training for every level"] },
+  { id:"court", name:"Basketball Court", img:"assets/court.jpg", alt:"Indoor basketball court",
+    icon:'<circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3.5 9h17"/><path d="M3.5 15h17"/>',
+    body:"A full-size indoor court for pickup runs, shooting work and league-style games — rain or shine, morning to close.",
+    facts:["Full-size indoor court","Pickup runs and solo shooting work","League play and pickup runs","Open during all club hours"] },
+  { id:"weights", name:"Free Weights", img:"assets/hero-floor.jpg", alt:"Gym floor with free weights and equipment",
+    icon:'<path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/>',
+    body:"Full dumbbell runs and a complete strength-machine floor — the iron half of the club's Strength & Cardio pillar.",
+    facts:["Free weights & strength machines","Part of the Strength & Cardio floor","Club tours are linked in the Watch section","Open every club hour"] },
+  { id:"cardio", name:"Cardio Floor", img:"assets/hero-floor.jpg", alt:"Rows of cardio equipment on the gym floor",
+    icon:'<path d="M3 12h4l3-8 4 16 3-8h4"/>',
+    body:"Rows of cardio equipment with room to move — members specifically call out the space here, even at busy times.",
+    facts:["Full cardio floor","Room to move — a recurring member-review theme","Club tours are linked in the Watch section","Open every club hour"] },
+  { id:"classes", name:"Group Fitness", img:"assets/classes.jpg", alt:"Group fitness class in the studio",
+    icon:'<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+    body:"Sixteen instructor-led sessions a week across eight formats — and the club includes them with membership at no additional charge.",
+    facts:["16 sessions a week on the current grid","8 formats — Zumba®, Yoga, Pilates, Aqua Fit & more","A named instructor on every session","Included with membership — no class fees"] },
+  { id:"pt", name:"Personal Training", img:"assets/training.jpg", alt:"Personal trainer coaching a client", flag:"Additional charge",
+    icon:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+    body:"Pro Results® personal training with four Master Trainers on this club's team. It starts with a complimentary fitness assessment; training itself is a separate agreement at an additional charge.",
+    facts:["Four Master Trainers: Tai V., Dervens J., Jaiden M., Sebastian S.","Complimentary fitness assessment to start (terms apply)","Studio Zone® app workouts for PT clients","Full detail in the Training section below"] },
+  { id:"sauna", name:"Sauna", img:"assets/recovery.jpg", alt:"Warm wooden sauna interior",
+    icon:'<path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 2.5.5 5 2.5 5 6a5 5 0 0 1-10 0c0-1.5.5-3 1.5-4 .5 1 1 2 2 3.5z"/><path d="M12 2v3"/>',
+    body:"The recovery suite's centerpiece — heat, quiet, and the full post-workout reset without leaving the club.",
+    facts:["Part of the sauna · steam · whirlpool recovery suite","By the locker rooms","Open every club hour"] },
+  { id:"steam", name:"Steam Room", img:null, alt:"",
+    icon:'<path d="M6 19a4 4 0 1 1 .6-7.96A5.5 5.5 0 0 1 17.3 9.6 4.25 4.25 0 0 1 17.5 18H6z"/>',
+    body:"The steam room completes the recovery suite alongside the sauna and whirlpool — the full post-workout circuit without leaving the club.",
+    facts:["Recovery suite, by the locker rooms","Sauna and whirlpool in the same suite","Open every club hour"] },
+  { id:"whirlpool", name:"Whirlpool Spa", img:null, alt:"",
+    icon:'<circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 1 10 10"/><path d="M12 22A10 10 0 0 1 2 12"/><path d="M12 6a6 6 0 0 1 6 6"/><path d="M12 18a6 6 0 0 1-6-6"/>',
+    body:"A whirlpool spa sitting right by the lap pool — finish swim sessions (and leg days) the right way.",
+    facts:["Poolside, next to the lap pool","Part of the recovery suite","Open every club hour"] },
+  { id:"locker", name:"Locker Rooms", img:null, alt:"",
+    icon:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M12 3v18"/><circle cx="9" cy="12" r=".9" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r=".9" fill="currentColor" stroke="none"/>',
+    body:"Full locker rooms with showers, set right by the recovery suite — train, shower, sauna, done.",
+    facts:["Full locker rooms with showers","Adjacent to sauna, steam room and whirlpool","Open every club hour"] },
+  { id:"kids", name:"Kids Klub", img:null, alt:"", flag:"Currently closed",
+    icon:'<circle cx="12" cy="12" r="9"/><path d="M8.5 14.5a5 5 0 0 0 7 0"/><circle cx="9" cy="9.5" r=".9" fill="currentColor" stroke="none"/><circle cx="15" cy="9.5" r=".9" fill="currentColor" stroke="none"/>',
+    body:"Kids Klub is LA Fitness's in-club babysitting service, offered at an extra charge where available. At THIS club it is currently closed — the club's own page lists it closed Monday through Sunday, and this page won't pretend otherwise.",
+    facts:["Status: CLOSED at this club (all week)","In-club babysitting service where offered","Call (321) 732-6018 for the latest status"] }
+];
+(function initExplorer(){
+  const tiles = document.getElementById("xTiles");
+  const panel = document.getElementById("xPanel");
+  if(!tiles || !panel) return;
+  const svgWrap = p => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + p + '</svg>';
+  AMEN.forEach((a, i) => {
+    const b = document.createElement("button");
+    b.className = "xtile" + (i === 0 ? " on" : "");
+    b.setAttribute("role", "tab");
+    b.innerHTML = svgWrap(a.icon) + "<span>" + a.name + "</span>";
+    b.addEventListener("click", () => {
+      tiles.querySelectorAll(".xtile").forEach(t => t.classList.remove("on"));
+      b.classList.add("on");
+      render(a);
+    });
+    tiles.appendChild(b);
+  });
+  function render(a){
+    const media = a.img
+      ? '<img src="' + a.img + '" alt="' + a.alt + '" loading="lazy">'
+      : '<div class="xicon">' + svgWrap(a.icon) + '</div>';
+    panel.innerHTML =
+      '<div class="xmedia">' + media + '</div>' +
+      '<div class="xbody">' + (a.flag ? '<span class="xflag">' + a.flag + '</span>' : '') +
+      '<h3>' + a.name + '</h3><p>' + a.body + '</p><ul>' +
+      a.facts.map(f => '<li>' + f + '</li>').join("") + '</ul></div>';
+  }
+  render(AMEN[0]);
+})();
+
+/* ---------- V4: schedule filters + today cards ---------- */
+(function initSchedule(){
+  const now = clubNow();
+  const todayList = document.getElementById("todayList");
+  if(todayList){
+    const cls = classesForDay(now.day);
+    if(cls.length){
+      todayList.innerHTML = cls.map(c => {
+        const parts = c.split(" — ");
+        return '<div class="tcard"><div class="tt">Today · ' + parts[0] + '</div><div class="tc">' + parts[1].split(" with ")[0] + '</div><div class="ti">with ' + parts[1].split(" with ")[1] + '</div></div>';
+      }).join("");
+    } else {
+      todayList.innerHTML = '<div class="tcard none"><div class="tc">No group classes on today\'s grid (' + DAYNAMES[now.day] + ')</div><div class="ti" style="color:var(--mut)">The floor, pool, court and sauna are all open — full grid below.</div></div>';
+    }
+  }
+  const table = document.getElementById("schedTable");
+  const count = document.getElementById("schedCount");
+  const fmtSel = document.getElementById("fmtFilter");
+  if(!table || !fmtSel) return;
+  let dayFilter = "all";
+  const norm = s => s.replace(/®/g, "").trim().toLowerCase();
+  function apply(){
+    const fmt = fmtSel.value;
+    let shown = 0, total = 0;
+    table.querySelectorAll("td[data-day]").forEach(td => {
+      const day = parseInt(td.dataset.day, 10);
+      const clsEl = td.querySelector(".cls");
+      let dim = false;
+      if(dayFilter !== "all"){
+        const want = dayFilter === "today" ? now.day : parseInt(dayFilter, 10);
+        if(day !== want) dim = true;
+      }
+      td.classList.toggle("fhit", false);
+      if(fmt !== "all"){
+        if(!clsEl) dim = true;
+        else if(norm(clsEl.textContent) === norm(fmt)){ td.classList.add("fhit"); if(!dim) shown++; }
+        else dim = true;
+      }
+      if(clsEl){ total++; if(fmt === "all" && !dim) shown++; }
+      td.classList.toggle("dim", dim);
+    });
+    table.querySelectorAll("th[data-day]").forEach(th => {
+      const day = parseInt(th.dataset.day, 10);
+      let dim = false;
+      if(dayFilter !== "all"){
+        const want = dayFilter === "today" ? now.day : parseInt(dayFilter, 10);
+        if(day !== want) dim = true;
+      }
+      th.classList.toggle("dim", dim);
+    });
+    if(count){
+      if(fmt === "all" && dayFilter === "all") count.innerHTML = "Showing all <b>" + total + " sessions</b> this week.";
+      else if(fmt !== "all") count.innerHTML = "<b>" + shown + "</b> " + fmt + " session" + (shown === 1 ? "" : "s") + " match your filters this week." + (shown === 0 ? " That format isn't on this week's grid — see the format library above." : "");
+      else count.innerHTML = "<b>" + shown + "</b> session" + (shown === 1 ? "" : "s") + " on the selected day.";
+    }
+  }
+  document.querySelectorAll("#schedFilters .fchip").forEach(ch => {
+    ch.addEventListener("click", () => {
+      document.querySelectorAll("#schedFilters .fchip").forEach(c => c.classList.remove("on"));
+      ch.classList.add("on");
+      dayFilter = ch.dataset.dayfilter;
+      apply();
+    });
+  });
+  fmtSel.addEventListener("change", apply);
+  apply();
+})();
+
+/* ---------- V4: counters, reveal, hero drift, YouTube facade ---------- */
+(function initMotion(){
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll("[data-count]").forEach(el => {
+    const target = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.dec || "0", 10);
+    if(reduced || !("IntersectionObserver" in window)){ el.textContent = target.toFixed(dec); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if(!en.isIntersecting) return;
+        io.disconnect();
+        const t0 = performance.now(), dur = 900;
+        (function tick(t){
+          const p = Math.min(1, (t - t0) / dur);
+          el.textContent = (target * (1 - Math.pow(1 - p, 3))).toFixed(dec);
+          if(p < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    }, { threshold: .4 });
+    io.observe(el);
+  });
+  if("IntersectionObserver" in window && !reduced){
+    const rio = new IntersectionObserver(entries => {
+      entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add("in"); rio.unobserve(en.target); } });
+    }, { threshold: .07 });
+    document.querySelectorAll("section, .ctaband, .bandphoto").forEach(s => { s.classList.add("rv"); rio.observe(s); });
+  }
+  const heroIn = document.querySelector(".hero-in");
+  if(heroIn && !reduced){
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if(ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        heroIn.style.transform = y < 700 ? "translateY(" + Math.min(22, y * 0.05) + "px)" : "";
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+  const yt = document.getElementById("ytFacade");
+  if(yt){
+    yt.addEventListener("click", () => {
+      yt.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/1jL99Btp00o?autoplay=1&rel=0" title="LA Fitness Club Tour — official video" allow="accelerometer; autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+    }, { once: true });
+  }
 })();
 
 /* ---------- chat wiring ---------- */
