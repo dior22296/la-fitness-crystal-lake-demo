@@ -9,7 +9,12 @@
 <meta property="og:title" content="LA Fitness — Orlando · Orange Ave (SoDo)">
 <meta property="og:description" content="Pool, courts, iron and classes in the heart of SoDo. Open 5 AM weekdays. Your first visit is free.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/hero-floor.jpg">
+<meta property="og:url" content="https://dior22296.github.io/la-fitness-crystal-lake-demo/">
+<meta property="og:image" content="https://dior22296.github.io/la-fitness-crystal-lake-demo/assets/club-1381.jpg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#10103E">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -31,6 +36,9 @@
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "05:00", "closes": "21:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "08:00", "closes": "19:00" }
   ],
+  "specialOpeningHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "validFrom": "2026-11-26", "validThrough": "2026-11-26", "dayOfWeek": "Thursday", "opens": "08:00", "closes": "12:00" }
+  ],
   "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "450", "bestRating": "5" },
   "amenityFeature": [
     { "@type": "LocationFeatureSpecification", "name": "Indoor Pool" },
@@ -48,457 +56,679 @@
 </script>
 <style>
   :root{
-    --bg:#050B18; --bg2:#071226; --panel:#0A1F44; --panel2:#0D2650;
-    --azure:#00B8FF; --cyan:#5EEAFF; --ink:#F4F8FC; --mut:#7E8FA6; --mut2:#A9BAD2;
-    --line:rgba(94,234,255,.16); --line2:rgba(244,248,252,.08);
-    --grad:linear-gradient(120deg,#00B8FF,#5EEAFF);
-    --rad:18px; --maxw:1180px;
+    --bg:#ffffff; --bg2:#f5f6fa; --panel:#ffffff; --panel2:#eef0f7;
+    --line:#dde0ec; --line2:#c9cde0;
+    --txt:#14142e; --mut:#5a5e7d; --dim:#8a8ea8;
+    --navy:#10103e; --navy2:#1d1d63; --navy-dk:#0a0a2a;
+    --yel:#fcb116; --yel2:#9a6b00; --yel-soft:rgba(252,177,22,.12);
   }
-  *{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; }
-  body{ background:var(--bg); color:var(--ink); font-family:"Avenir Next","Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
-  img{ max-width:100%; display:block; }
-  a{ color:var(--cyan); }
-  .wrap{ max-width:var(--maxw); margin:0 auto; padding:0 20px; }
-  h1,h2,h3{ line-height:1.08; letter-spacing:-.01em; }
-  .eyebrow{ font-size:12px; font-weight:800; letter-spacing:.22em; text-transform:uppercase; color:var(--azure); }
-  .sec{ padding:84px 0 8px; }
-  .sec-head{ max-width:720px; margin-bottom:34px; }
-  .sec-head h2{ font-size:clamp(30px,4.6vw,46px); font-weight:800; margin:10px 0 12px; }
-  .sec-head p{ color:var(--mut2); font-size:17px; }
-  .reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
-  .reveal.in{ opacity:1; transform:none; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Segoe UI', 'Helvetica Neue', Arial, sans-serif; background:var(--bg); color:var(--txt); }
+  h1,h2,h3,.hd { font-family:'Arial Narrow','Segoe UI',Arial,sans-serif; text-transform:uppercase; letter-spacing:.06em; }
+  a { color:inherit; }
+  img { max-width:100%; }
 
   /* ---------- HEADER ---------- */
-  header.top{ position:sticky; top:0; z-index:50; background:rgba(5,11,24,.88); backdrop-filter:blur(12px); border-bottom:1px solid var(--line2); }
-  .topbar{ display:flex; align-items:center; gap:14px; padding:12px 0; }
-  .brand{ text-decoration:none; color:var(--ink); line-height:1; }
-  .brand .bname{ font-size:24px; font-weight:900; letter-spacing:.04em; }
-  .brand .bname span{ color:var(--azure); }
-  .brand .bsub{ display:block; font-size:10.5px; font-weight:700; letter-spacing:.24em; color:var(--mut); margin-top:4px; text-transform:uppercase; }
-  .demopill{ font-size:10px; font-weight:800; letter-spacing:.14em; color:#04121F; background:var(--grad); padding:5px 9px; border-radius:99px; white-space:nowrap; }
-  .topcall{ margin-left:auto; display:inline-flex; align-items:center; gap:8px; background:var(--grad); color:#04121F; font-weight:800; font-size:14.5px; text-decoration:none; padding:11px 18px; border-radius:99px; box-shadow:0 6px 24px rgba(0,184,255,.35); }
-  .topcall svg{ width:17px; height:17px; }
-  .topcall:hover{ filter:brightness(1.08); }
-  @media (max-width:560px){ .topcall .pct{ display:none; } .brand .bname{ font-size:20px; } }
+  .topbar { position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:14px;
+    padding:10px 18px; background:rgba(255,255,255,.97); border-bottom:1px solid var(--line); backdrop-filter:blur(4px); }
+  .brand { text-decoration:none; line-height:1; color:var(--navy); }
+  .brand .bname { font-size:27px; font-weight:900; letter-spacing:.03em; font-family:'Arial Narrow','Segoe UI',Arial,sans-serif; }
+  .brand .bname .bar { color:var(--yel2); }
+  .brand .bsub { display:block; font-size:10.5px; font-weight:bold; letter-spacing:.24em; color:var(--mut); margin-top:4px; text-transform:uppercase; font-family:'Segoe UI',Arial,sans-serif; }
+  @media (max-width:560px){ .brand .bname{ font-size:22px; } }
+  .demopill { font-size:10px; font-weight:800; letter-spacing:.14em; color:var(--navy); background:var(--yel); padding:5px 9px; border-radius:999px; white-space:nowrap; }
+  .top-actions { display:flex; align-items:center; gap:10px; flex:none; }
+  .callbtn { display:flex; align-items:center; gap:7px; min-height:44px; color:var(--navy); text-decoration:none; padding:10px 15px;
+    border:1.5px solid var(--line2); border-radius:999px; font-size:14px; font-weight:bold; white-space:nowrap; }
+  .callbtn svg { width:16px; height:16px; color:var(--yel2); }
+  .callbtn:hover { border-color:var(--navy); }
+  .bookbtn { display:flex; align-items:center; gap:7px; min-height:44px; background:var(--navy); color:#fff; text-decoration:none; padding:11px 17px;
+    border-radius:999px; font-size:14px; font-weight:bold; white-space:nowrap; box-shadow:0 4px 16px rgba(16,16,62,.35); }
+  .bookbtn:hover { background:var(--navy2); }
+  @media (max-width:640px){ .callbtn .callnum{ display:none; } .callbtn{ padding:10px 12px; } .bookbtn{ padding:10px 13px; font-size:13px; } .demopill{ display:none; } }
+  .hero .demopill { display:none; margin-bottom:16px; }
+  @media (max-width:640px){ .hero .demopill{ display:inline-block; } }
 
-  nav.icons{ position:sticky; top:63px; z-index:49; display:flex; justify-content:space-around; background:rgba(5,11,24,.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--line2); padding:8px 4px 6px; }
-  nav.icons a{ color:var(--mut); text-decoration:none; font-size:10.5px; font-weight:700; letter-spacing:.09em; text-transform:uppercase; text-align:center; padding:4px 6px; }
-  nav.icons a:hover, nav.icons a.active{ color:var(--ink); }
-  nav.icons svg{ width:23px; height:23px; display:block; margin:0 auto 4px; color:var(--azure); }
-  @media (max-width:560px){ nav.icons{ top:59px; } nav.icons a{ font-size:9.5px; } }
+  /* ---------- ICON NAV ---------- */
+  nav.icons { display:flex; justify-content:space-around; background:var(--navy); border-bottom:3px solid var(--yel);
+    padding:9px 6px 10px; position:sticky; top:73px; z-index:39; }
+  @media (max-width:560px){ nav.icons{ top:65px; } }
+  nav.icons a { color:#c9cbe4; text-decoration:none; font-size:11px; font-weight:bold; letter-spacing:.08em;
+    text-transform:uppercase; text-align:center; padding:2px 4px; }
+  nav.icons a:hover { color:#fff; }
+  nav.icons svg { width:23px; height:23px; display:block; margin:0 auto 4px; color:var(--yel); }
 
   /* ---------- HERO ---------- */
-  .hero{ position:relative; min-height:92vh; display:flex; align-items:flex-end; overflow:hidden; }
-  .hero .hbg{ position:absolute; inset:0; }
-  .hero .hbg img{ width:100%; height:112%; object-fit:cover; will-change:transform; }
-  .hero .scrim{ position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,11,24,.42) 0%,rgba(5,11,24,.18) 34%,rgba(5,11,24,.78) 74%,var(--bg) 100%),linear-gradient(95deg,rgba(5,11,24,.72) 0%,rgba(5,11,24,.12) 62%); }
-  .hero .hcontent{ position:relative; z-index:2; width:100%; padding:120px 0 54px; }
-  .hero h1{ font-size:clamp(40px,7.2vw,78px); font-weight:900; text-transform:uppercase; letter-spacing:.005em; max-width:820px; }
-  .hero h1 .blu{ background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .hero .hsub{ margin-top:16px; font-size:clamp(16px,2.2vw,20px); color:#D7E5F5; max-width:600px; }
-  .statuspill{ display:inline-flex; align-items:center; gap:8px; background:rgba(10,31,68,.72); border:1px solid var(--line); padding:8px 14px; border-radius:99px; font-size:13.5px; font-weight:700; margin-bottom:20px; backdrop-filter:blur(6px); }
-  .statuspill i{ width:9px; height:9px; border-radius:50%; background:#3ddc74; box-shadow:0 0 0 4px rgba(61,220,116,.22); display:inline-block; }
-  .statuspill.closed i{ background:#ff5d5d; box-shadow:0 0 0 4px rgba(255,93,93,.2); }
-  .hctas{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
-  .btn{ display:inline-flex; align-items:center; gap:9px; font-weight:800; font-size:15.5px; text-decoration:none; padding:15px 26px; border-radius:99px; transition:transform .15s ease, filter .15s ease; }
-  .btn:hover{ transform:translateY(-2px); }
-  .btn.primary{ background:var(--grad); color:#04121F; box-shadow:0 10px 34px rgba(0,184,255,.4); }
-  .btn.ghost{ background:rgba(10,31,68,.66); color:var(--ink); border:1px solid var(--line); backdrop-filter:blur(6px); }
-  .btn svg{ width:18px; height:18px; }
-  .reviewchip{ margin-top:34px; max-width:520px; background:rgba(10,31,68,.62); border:1px solid rgba(94,234,255,.45); border-radius:16px; padding:16px 18px; backdrop-filter:blur(10px); box-shadow:0 0 0 1px rgba(0,184,255,.12), 0 18px 44px rgba(0,0,0,.45); }
-  .reviewchip .stars{ color:#FFC531; letter-spacing:3px; font-size:15px; }
-  .reviewchip blockquote{ font-size:16.5px; font-weight:600; margin:6px 0 6px; }
-  .reviewchip figcaption{ font-size:12.5px; color:var(--mut2); letter-spacing:.04em; }
+  .hero { position:relative; overflow:hidden; text-align:center;
+    background:#10103e url('assets/club-1381.jpg') center 32%/cover no-repeat; }
+  .hero-video { position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none; }
+  .hero-video iframe { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:177.78vh; height:56.25vw; min-width:100%; min-height:100%; border:0; }
+  .hero::before { content:''; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, rgba(10,10,42,.86), rgba(10,10,42,.62) 45%, rgba(10,10,42,.94)),
+               radial-gradient(800px 420px at 50% -100px, rgba(252,177,22,.20), rgba(252,177,22,0) 60%); }
+  .hero::after { content:''; position:absolute; inset:0; pointer-events:none; opacity:.5;
+    background:repeating-linear-gradient(115deg, rgba(255,255,255,.014) 0 2px, transparent 2px 9px); }
+  .hero-in { position:relative; z-index:2; max-width:900px; margin:0 auto; padding:36px 22px 44px; }
+  .statuspill { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.35);
+    padding:8px 14px; border-radius:999px; font-size:13.5px; font-weight:700; color:#fff; margin-bottom:22px; backdrop-filter:blur(6px); }
+  .statuspill i { width:9px; height:9px; border-radius:50%; background:#3ddc74; box-shadow:0 0 0 4px rgba(61,220,116,.22); display:inline-block; flex:none; }
+  .statuspill.closed i { background:#ff5d5d; box-shadow:0 0 0 4px rgba(255,93,93,.2); }
+  .herorev { max-width:660px; margin:0 auto 28px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.28);
+    border-left:4px solid var(--yel); border-radius:14px; padding:18px 22px; text-align:left; }
+  .hr-quote { font-size:34px; line-height:.5; color:var(--yel); font-family:Georgia,serif; display:block; margin-bottom:10px; }
+  .hr-stars { color:var(--yel); letter-spacing:3px; font-size:14px; display:block; margin-bottom:8px; }
+  .hr-text { font-style:italic; font-size:16.5px; line-height:1.55; color:#f2f2fa; }
+  .hr-name { font-size:12.5px; color:#c9cbe4; margin-top:9px; letter-spacing:.04em; text-transform:uppercase; }
+  .kick { display:inline-block; font-size:12px; font-weight:bold; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--yel); border:1px solid var(--yel2); border-radius:999px; padding:7px 15px; margin-bottom:18px; background:rgba(252,177,22,.10); }
+  .hero h1 { font-size:44px; line-height:1.08; font-weight:900; color:#fff; margin-bottom:14px; }
+  .hero h1 .yl { color:var(--yel); }
+  @media (max-width:640px){ .hero h1{ font-size:31px; } }
+  .hero .tag { font-size:16.5px; line-height:1.6; color:#e3e4f2; max-width:680px; margin:0 auto 24px; }
+  .hero .tag strong { color:#fff; }
+  .ctas { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; gap:9px; text-decoration:none; font-weight:bold; font-size:16px;
+    padding:15px 28px; border-radius:999px; }
+  .btn svg { width:19px; height:19px; }
+  .btn-yel { background:var(--yel); color:var(--navy); box-shadow:0 8px 24px rgba(252,177,22,.4); }
+  .btn-yel:hover { background:#ffc84d; }
+  .btn-navy { background:var(--navy); color:#fff; box-shadow:0 8px 24px rgba(16,16,62,.35); }
+  .btn-navy:hover { background:var(--navy2); }
+  .btn-line { border:1.5px solid var(--line2); color:var(--navy); background:rgba(255,255,255,.5); }
+  .btn-line:hover { border-color:var(--navy); }
+  .btn-line svg { color:var(--yel2); }
+  .hero .btn-line { border-color:rgba(255,255,255,.45); color:#fff; background:rgba(255,255,255,.04); }
+  .hero .btn-line:hover { border-color:var(--yel); }
+  .hero .btn-line svg { color:var(--yel); }
+  .stats { display:flex; justify-content:center; gap:0; flex-wrap:wrap; margin-top:30px; border:1px solid rgba(255,255,255,.28);
+    border-radius:14px; background:rgba(255,255,255,.05); overflow:hidden; }
+  .stat { flex:1 1 200px; padding:16px 14px; }
+  .stat + .stat { border-left:1px solid rgba(255,255,255,.22); }
+  @media (max-width:640px){ .stat + .stat{ border-left:none; border-top:1px solid rgba(255,255,255,.22); } }
+  .stat b { display:block; font-size:21px; letter-spacing:.03em; color:#fff; }
+  .stat b .yl { color:var(--yel); }
+  .stat span { font-size:12px; color:#c9cbe4; text-transform:uppercase; letter-spacing:.1em; }
 
-  /* ---------- STATS ---------- */
-  .stats{ border-top:1px solid var(--line2); border-bottom:1px solid var(--line2); background:linear-gradient(180deg,var(--bg2),var(--bg)); }
-  .stats .wrap{ display:grid; grid-template-columns:repeat(4,1fr); }
-  .stat{ padding:26px 14px; text-align:center; border-left:1px solid var(--line2); }
-  .stat:first-child{ border-left:none; }
-  .stat .n{ font-size:clamp(24px,3.4vw,36px); font-weight:900; color:var(--ink); }
-  .stat .n span{ color:var(--azure); }
-  .stat .l{ font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--mut); margin-top:4px; }
-  @media (max-width:760px){ .stats .wrap{ grid-template-columns:1fr 1fr; } .stat:nth-child(3){ border-left:none; } .stat{ border-top:1px solid var(--line2); } .stat:nth-child(-n+2){ border-top:none; } }
+  /* ---------- PHOTOS ---------- */
+  .photo { position:relative; border-radius:16px; overflow:hidden; border:1px solid var(--line2);
+    box-shadow:0 16px 40px rgba(16,16,62,.18); background:var(--panel2); }
+  .photo img { width:100%; height:100%; object-fit:cover; display:block; }
+  .photo::after { content:''; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(200deg, rgba(252,177,22,.08), rgba(0,0,0,0) 45%, rgba(16,16,62,.16)); }
+  .prog .photo img { height:350px; }
+  @media (max-width:760px){ .prog .photo img{ height:260px; } }
+  .aboutgrid .photo img { min-height:440px; }
+  @media (max-width:760px){ .aboutgrid .photo img{ min-height:320px; } }
+  .bandphoto { border-top:3px solid var(--yel); border-bottom:3px solid var(--yel); position:relative; overflow:hidden; }
+  .bandphoto img { width:100%; height:260px; object-fit:cover; display:block; }
+  .bandphoto::after { content:''; position:absolute; inset:0; pointer-events:none;
+    background:linear-gradient(180deg, rgba(16,16,62,.30), rgba(16,16,62,0) 40%, rgba(16,16,62,.35)); }
+  @media (max-width:760px){ .bandphoto img{ height:180px; } }
 
-  /* ---------- AMENITY CARDS ---------- */
-  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
-  @media (max-width:960px){ .cards{ grid-template-columns:1fr 1fr; } }
-  @media (max-width:620px){ .cards{ grid-template-columns:1fr; } }
-  .card{ position:relative; border-radius:var(--rad); overflow:hidden; min-height:300px; display:flex; align-items:flex-end; border:1px solid var(--line2); background:var(--panel); isolation:isolate; }
-  .card img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:-1; transition:transform .8s ease; }
-  .card:hover img{ transform:scale(1.06); }
-  .card::after{ content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(5,11,24,.05) 40%,rgba(5,11,24,.9) 88%); z-index:-1; }
-  .card .cbody{ padding:20px; }
-  .card .cic{ width:42px; height:42px; border-radius:12px; background:rgba(0,184,255,.16); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; margin-bottom:12px; }
-  .card .cic svg{ width:23px; height:23px; color:var(--cyan); }
-  .card h3{ font-size:21px; font-weight:800; }
-  .card p{ color:#C9D9EE; font-size:14.5px; margin-top:5px; }
-  .chiprow{ display:flex; flex-wrap:wrap; gap:9px; margin-top:20px; }
-  .chip{ font-size:13px; font-weight:700; color:var(--mut2); border:1px solid var(--line2); background:var(--bg2); padding:8px 13px; border-radius:99px; }
-  .chip b{ color:var(--cyan); font-weight:800; }
+  /* ---------- SECTIONS ---------- */
+  section { padding:52px 22px; max-width:1020px; margin:0 auto; }
+  section[id], .prog[id] { scroll-margin-top:140px; }
+  @media (max-width:560px){ section[id], .prog[id]{ scroll-margin-top:128px; } }
+  .eyebrow { text-align:center; font-size:12px; font-weight:bold; letter-spacing:.3em; text-transform:uppercase; color:var(--yel2); margin-bottom:10px; }
+  h2 { font-size:30px; font-weight:900; text-align:center; margin-bottom:10px; line-height:1.15; color:var(--navy); }
+  h2 .yl { color:var(--yel2); }
+  @media (max-width:640px){ h2{ font-size:24px; } }
+  .sub { text-align:center; font-size:15px; color:var(--mut); line-height:1.6; max-width:720px; margin:0 auto 28px; }
+  .divider { width:64px; height:4px; background:var(--yel); border-radius:2px; margin:0 auto 18px; }
 
-  /* ---------- SCHEDULE ---------- */
-  .schedwrap{ background:linear-gradient(180deg,var(--panel),var(--bg2)); border:1px solid var(--line2); border-radius:var(--rad); padding:8px; overflow-x:auto; }
-  table.sched{ width:100%; border-collapse:collapse; min-width:680px; font-size:14px; }
-  table.sched th, table.sched td{ padding:13px 12px; text-align:left; border-bottom:1px solid var(--line2); vertical-align:top; }
-  table.sched th{ font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:var(--azure); }
-  table.sched td .cls{ font-weight:800; color:var(--ink); display:block; }
-  table.sched td .ins{ color:var(--mut); font-size:12.5px; }
-  table.sched td.today{ background:rgba(0,184,255,.08); border-radius:8px; }
-  table.sched th.today{ color:var(--cyan); }
-  .schednote{ color:var(--mut); font-size:13px; margin-top:14px; }
+  .mantra { text-align:center; padding:40px 22px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    background:linear-gradient(180deg,var(--bg2),#eceef6); }
+  .mantra p { font-size:21px; line-height:1.5; max-width:760px; margin:0 auto; color:#2a2a52; }
+  .mantra p b { color:var(--navy); } .mantra .yl { color:var(--yel2); font-weight:bold; }
+  @media (max-width:640px){ .mantra p{ font-size:17px; } }
 
-  /* ---------- TRAINING / STORIES ---------- */
-  .split{ display:grid; grid-template-columns:1.05fr .95fr; gap:26px; align-items:stretch; }
-  @media (max-width:860px){ .split{ grid-template-columns:1fr; } }
-  .imgpanel{ border-radius:var(--rad); overflow:hidden; min-height:340px; border:1px solid var(--line2); }
-  .imgpanel img{ width:100%; height:100%; object-fit:cover; }
-  .panel{ background:linear-gradient(180deg,var(--panel),var(--bg2)); border:1px solid var(--line2); border-radius:var(--rad); padding:30px; }
-  .panel h3{ font-size:24px; font-weight:800; margin-bottom:10px; }
-  .panel p{ color:var(--mut2); margin-bottom:12px; }
-  .trainers{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:18px; }
-  .trainer{ background:rgba(5,11,24,.5); border:1px solid var(--line2); border-radius:14px; padding:14px 16px; }
-  .trainer .tn{ font-weight:800; font-size:16.5px; }
-  .trainer .tt{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--azure); font-weight:700; }
-  .bigscore{ display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
-  .bigscore .score{ font-size:76px; font-weight:900; line-height:1; }
-  .bigscore .stars{ color:#FFC531; font-size:22px; letter-spacing:4px; }
-  .bigscore .sc{ color:var(--mut2); font-size:14.5px; margin-top:5px; }
-  .quotecard{ margin-top:22px; background:rgba(5,11,24,.5); border:1px solid rgba(94,234,255,.35); border-radius:14px; padding:20px; }
-  .quotecard blockquote{ font-size:18px; font-weight:600; }
-  .quotecard figcaption{ color:var(--mut); font-size:13px; margin-top:8px; }
+  /* pillars */
+  .grid4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(225px,1fr)); gap:16px; }
+  .pillar { background:var(--panel); border:1px solid var(--line); border-top:4px solid var(--yel); border-radius:14px; padding:24px 20px;
+    box-shadow:0 8px 24px rgba(16,16,62,.06); }
+  .pillar .pic { width:52px; height:52px; border-radius:12px; background:var(--yel-soft); border:1px solid var(--yel2);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+  .pillar .pic svg { width:27px; height:27px; color:var(--navy); }
+  .pillar h3 { font-size:17px; margin-bottom:6px; line-height:1.3; color:var(--navy); }
+  .pillar .pline { font-style:italic; color:#33335c; font-size:14.5px; line-height:1.5; margin-bottom:12px; }
+  .pillar ul { list-style:none; }
+  .pillar li { font-size:13.5px; color:var(--mut); padding:6px 0 6px 18px; position:relative; border-top:1px dashed var(--line); }
+  .pillar li::before { content:''; position:absolute; left:0; top:12px; width:8px; height:8px; background:var(--yel); border-radius:2px; }
 
-  /* ---------- VISIT ---------- */
-  .visitgrid{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
-  @media (max-width:860px){ .visitgrid{ grid-template-columns:1fr; } }
-  .vcard{ background:linear-gradient(180deg,var(--panel),var(--bg2)); border:1px solid var(--line2); border-radius:var(--rad); padding:28px; }
-  .vcard h3{ font-size:20px; font-weight:800; margin-bottom:14px; display:flex; align-items:center; gap:10px; }
-  .vcard h3 svg{ width:21px; height:21px; color:var(--azure); }
-  table.hours{ width:100%; border-collapse:collapse; font-size:15px; }
-  table.hours td{ padding:9px 0; border-bottom:1px solid var(--line2); color:var(--mut2); }
-  table.hours td:last-child{ text-align:right; color:var(--ink); font-weight:700; }
-  table.hours tr.today td{ color:var(--cyan); }
-  table.hours tr.today td:last-child{ color:var(--cyan); }
-  .addr{ font-size:19px; font-weight:800; line-height:1.35; }
-  .addrsub{ color:var(--mut2); margin:6px 0 16px; }
-  .alert{ border:1px solid rgba(255,197,49,.4); background:rgba(255,197,49,.07); border-radius:12px; padding:13px 15px; font-size:14px; color:#F2D98C; margin-top:16px; }
-  .alert.blue{ border-color:var(--line); background:rgba(0,184,255,.07); color:var(--mut2); }
-  .alert.blue b{ color:var(--ink); }
+  /* programs / feature rows */
+  .prog { display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:center; padding:30px 0; }
+  .prog + .prog { border-top:1px solid var(--line); }
+  .prog.flip .p-media { order:2; }
+  @media (max-width:760px){ .prog{ grid-template-columns:1fr; } .prog.flip .p-media{ order:0; } }
+  .prog .p-ic { display:inline-flex; align-items:center; gap:10px; margin-bottom:10px; }
+  .prog .p-ic .pic { width:46px; height:46px; border-radius:12px; background:var(--yel-soft); border:1px solid var(--yel2);
+    display:flex; align-items:center; justify-content:center; }
+  .prog .p-ic svg { width:24px; height:24px; color:var(--navy); }
+  .prog .p-tag { font-size:11.5px; font-weight:bold; letter-spacing:.22em; text-transform:uppercase; color:var(--yel2); }
+  .prog h3 { font-size:25px; font-weight:900; margin-bottom:10px; line-height:1.2; color:var(--navy); }
+  .prog p { font-size:15px; line-height:1.65; color:#33335c; margin-bottom:12px; }
+  .prog ul { list-style:none; margin-bottom:18px; }
+  .prog li { font-size:14px; color:var(--mut); padding:5px 0 5px 24px; position:relative; }
+  .prog li::before { content:''; position:absolute; left:0; top:9px; width:13px; height:7px;
+    border-left:3px solid var(--yel2); border-bottom:3px solid var(--yel2); transform:rotate(-45deg); }
+  .mini { display:inline-flex; align-items:center; gap:8px; background:var(--navy); color:#fff; text-decoration:none;
+    font-weight:bold; font-size:14.5px; padding:12px 22px; border-radius:999px; }
+  .mini:hover { background:var(--navy2); }
+  .mini.ghost { background:transparent; border:1.5px solid var(--line2); color:var(--navy); margin-left:8px; }
+  .mini.ghost:hover { border-color:var(--navy); }
 
-  /* ---------- PASS CTA ---------- */
-  .passband{ margin:84px 0 0; position:relative; border-radius:26px; overflow:hidden; border:1px solid var(--line); }
-  .passband img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
-  .passband::after{ content:""; position:absolute; inset:0; background:linear-gradient(92deg,rgba(5,11,24,.92) 30%,rgba(5,11,24,.45) 75%); }
-  .passband .pbody{ position:relative; z-index:2; padding:52px 40px; max-width:640px; }
-  .passband h2{ font-size:clamp(30px,4.6vw,46px); font-weight:900; text-transform:uppercase; }
-  .passband p{ color:#D7E5F5; margin:14px 0 24px; font-size:16.5px; }
-  @media (max-width:620px){ .passband .pbody{ padding:38px 24px; } }
+  /* schedule */
+  .schedwrap { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:8px; overflow-x:auto;
+    box-shadow:0 12px 32px rgba(16,16,62,.08); }
+  table.sched { width:100%; border-collapse:collapse; min-width:680px; font-size:14px; }
+  table.sched th, table.sched td { padding:13px 12px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top; }
+  table.sched thead th { background:var(--navy); color:#fff; font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; }
+  table.sched thead th:first-child { border-radius:10px 0 0 0; } table.sched thead th:last-child { border-radius:0 10px 0 0; }
+  table.sched thead th.today { background:var(--yel); color:var(--navy); }
+  table.sched tbody th { font-size:12.5px; letter-spacing:.08em; color:var(--navy); white-space:nowrap; }
+  table.sched td .cls { font-weight:800; color:var(--txt); display:block; }
+  table.sched td .ins { color:var(--mut); font-size:12.5px; }
+  table.sched td.today { background:var(--yel-soft); }
+  .schednote { color:var(--mut); font-size:13px; margin-top:14px; line-height:1.6; }
 
-  /* ---------- FOOTER ---------- */
-  footer{ margin-top:84px; border-top:1px solid var(--line2); background:#040812; padding:44px 0 54px; }
-  footer .fbrand{ font-size:20px; font-weight:900; letter-spacing:.04em; }
-  footer .fbrand span{ color:var(--azure); }
-  .fnav{ margin:16px 0 6px; font-size:13.5px; }
-  .fnav a{ color:var(--mut); text-decoration:none; margin:0 2px; display:inline-block; padding:10px 8px; }
-  .fnav a:hover{ color:var(--ink); }
-  footer .fine{ color:var(--mut); font-size:12.5px; line-height:1.65; max-width:760px; }
-  footer .built{ margin-top:18px; font-size:13px; font-weight:700; color:var(--mut2); letter-spacing:.05em; }
-  footer .built b{ color:var(--cyan); }
+  /* steps */
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:16px; }
+  .step { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:24px 20px; text-align:center;
+    box-shadow:0 8px 24px rgba(16,16,62,.06); }
+  .step .num { width:46px; height:46px; margin:0 auto 12px; border-radius:50%; background:var(--navy); color:var(--yel);
+    font-size:20px; font-weight:900; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(16,16,62,.3); }
+  .step h3 { font-size:16px; margin-bottom:7px; color:var(--navy); }
+  .step p { font-size:14px; color:var(--mut); line-height:1.6; }
+
+  /* stories */
+  .story-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  .story { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:26px 22px; position:relative;
+    box-shadow:0 8px 24px rgba(16,16,62,.06); }
+  .story::before { content:'\201C'; position:absolute; top:6px; left:16px; font-family:Georgia,serif; font-size:64px; color:var(--yel); opacity:.65; }
+  .story .s-head { font-size:18px; font-weight:bold; line-height:1.4; margin:26px 0 10px; color:var(--navy); }
+  .story .s-body { font-size:14.5px; line-height:1.65; color:#3c3c64; font-style:italic; }
+  .story .s-name { margin-top:16px; padding-top:13px; border-top:1px solid var(--line); font-size:13px; }
+  .story .s-name b { display:block; font-size:14.5px; letter-spacing:.03em; }
+  .story .s-name span { color:var(--yel2); text-transform:uppercase; font-size:11.5px; letter-spacing:.12em; }
+  .story .score { font-size:64px; font-weight:900; line-height:1; color:var(--navy); margin-top:22px; }
+  .story .stars { color:var(--yel2); font-size:21px; letter-spacing:4px; margin:8px 0; }
+  .story .plain { font-size:14.5px; line-height:1.65; color:#3c3c64; font-style:normal; }
+  .story ul { list-style:none; margin-top:22px; }
+  .story ul li { font-size:14px; color:#3c3c64; padding:6px 0 6px 24px; position:relative; border-top:1px dashed var(--line); }
+  .story ul li::before { content:''; position:absolute; left:0; top:11px; width:13px; height:7px;
+    border-left:3px solid var(--yel2); border-bottom:3px solid var(--yel2); transform:rotate(-45deg); }
+
+  /* about */
+  .aboutgrid { display:grid; grid-template-columns:1fr 1fr; gap:26px; align-items:center; }
+  @media (max-width:760px){ .aboutgrid{ grid-template-columns:1fr; } }
+  .abouttxt { text-align:left; }
+  .abouttxt h2 { text-align:left; }
+  .abouttxt .divider { margin:0 0 16px; }
+  .abouttxt .eyebrow { text-align:left; }
+  .abouttxt p { font-size:15.5px; line-height:1.7; color:#33335c; margin-bottom:13px; }
+  .abouttxt p strong { color:var(--navy); }
+  .cred { display:flex; gap:12px; flex-wrap:wrap; margin-top:18px; }
+  .cred .chip2 { border:1px solid var(--yel2); background:var(--yel-soft); border-radius:999px; padding:9px 15px;
+    font-size:13px; font-weight:bold; letter-spacing:.04em; color:var(--navy); }
+  .cred .chip2 .yl { color:var(--yel2); }
+
+  /* watch — official video tiles */
+  .videogrid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  @media (max-width:900px){ .videogrid{ grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:560px){ .videogrid{ grid-template-columns:1fr; } }
+  .vtile { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:16/9; background:var(--navy);
+    border:1px solid var(--line); cursor:pointer; padding:0; width:100%; display:block; }
+  .vtile img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .35s ease; }
+  .vtile:hover img { transform:scale(1.04); }
+  .vtile::after { content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,10,42,0) 40%, rgba(10,10,42,.78)); }
+  .vtile .vplay { position:absolute; top:50%; left:50%; transform:translate(-50%,-62%); z-index:2; width:58px; height:58px;
+    border-radius:50%; background:var(--yel); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.35); }
+  .vtile .vplay svg { width:24px; height:24px; color:var(--navy); margin-left:3px; }
+  .vtile .vlabel { position:absolute; left:14px; bottom:11px; z-index:2; color:#fff; font-weight:800; font-size:15px; text-align:left; }
+  .vframe { position:relative; border-radius:16px; overflow:hidden; aspect-ratio:16/9; background:#000; border:1px solid var(--line); }
+  .vframe iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+
+  /* CTA band */
+  .ctaband { position:relative; text-align:center; padding:52px 22px; border-top:3px solid var(--yel); border-bottom:3px solid var(--yel);
+    background:linear-gradient(rgba(13,13,52,.93), rgba(13,13,52,.93)), url('assets/laf-free-pass-bg.jpg') center/cover no-repeat, var(--navy); }
+  .ctaband h2 { margin-bottom:10px; color:#fff; }
+  .ctaband h2 .yl { color:var(--yel); }
+  .ctaband .eyebrow { color:var(--yel); }
+  .ctaband p { color:#c9cbe4; font-size:15.5px; max-width:620px; margin:0 auto 24px; line-height:1.6; }
+  .ctaband .btn-line { border-color:rgba(255,255,255,.45); color:#fff; background:rgba(255,255,255,.04); }
+  .ctaband .btn-line:hover { border-color:var(--yel); }
+  .ctaband .btn-line svg { color:var(--yel); }
+
+  /* visit */
+  .visitgrid { display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  @media (max-width:760px){ .visitgrid{ grid-template-columns:1fr; } }
+  .vcard { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:26px 22px;
+    box-shadow:0 8px 24px rgba(16,16,62,.06); }
+  .vcard h3 { font-size:17px; margin-bottom:16px; display:flex; align-items:center; gap:9px; color:var(--navy); }
+  .vcard h3 svg { width:21px; height:21px; color:var(--yel2); }
+  .hrow { display:flex; justify-content:space-between; gap:12px; font-size:14.5px; padding:10px 2px; border-bottom:1px dashed var(--line); }
+  .hrow:last-of-type { border-bottom:none; }
+  .hrow .d { color:var(--mut); } .hrow .t { font-weight:bold; text-align:right; color:var(--navy); }
+  table.hours { width:100%; border-collapse:collapse; font-size:14.5px; }
+  table.hours td { padding:10px 2px; border-bottom:1px dashed var(--line); color:var(--mut); }
+  table.hours td:last-child { text-align:right; color:var(--navy); font-weight:bold; }
+  table.hours tr.today td { color:var(--yel2); }
+  table.hours tr.today td:last-child { color:var(--yel2); }
+  .addr { font-size:16px; line-height:1.6; margin-bottom:6px; }
+  .addr-note { font-size:13.5px; color:var(--mut); line-height:1.6; margin-bottom:18px; }
+  .alert { border:1px solid var(--yel2); background:var(--yel-soft); border-radius:12px; padding:13px 15px; font-size:14px; color:#4a3a00; margin-top:16px; line-height:1.55; }
+  .alert.blue { border-color:var(--line2); background:var(--panel2); color:var(--mut); }
+  .alert.blue b { color:var(--navy); }
+
+  /* footer */
+  footer { border-top:3px solid var(--yel); background:var(--navy-dk); padding:38px 22px 30px; text-align:center; color:#c9cbe4; }
+  footer .flogo { font-size:30px; font-weight:900; letter-spacing:.03em; color:#fff; font-family:'Arial Narrow','Segoe UI',Arial,sans-serif; margin-bottom:6px; }
+  footer .flogo .bar { color:var(--yel); }
+  footer .fsub { font-size:11px; font-weight:bold; letter-spacing:.24em; text-transform:uppercase; color:#8f92bd; margin-bottom:16px; }
+  footer .faddr { font-size:14px; color:#c9cbe4; line-height:1.7; }
+  footer .faddr a { color:#fff; font-weight:bold; text-decoration:none; }
+  .fnav { margin:14px 0 4px; font-size:13px; }
+  .fnav a { color:#c9cbe4; text-decoration:none; margin:0 2px; display:inline-block; padding:12px 8px; min-height:24px; }
+  .fnav a:hover { color:#fff; }
+  .fsmall { font-size:12px; color:#8f92bd; margin-top:14px; line-height:1.7; max-width:820px; margin-left:auto; margin-right:auto; }
+  .fsmall .credit { color:#c9cbe4; }
+  .fcredits { font-size:11.5px; color:#767aa3; margin-top:10px; line-height:1.7; max-width:820px; margin-left:auto; margin-right:auto; }
+  .fcredits a { color:#a9abd0; }
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
 
   /* ---------- AI CHATBOT ---------- */
-  .chatfab{ position:fixed; right:18px; bottom:18px; z-index:60; display:flex; align-items:center; gap:9px; background:#0A1F44; color:#fff; border:1px solid var(--line); border-radius:99px; padding:13px 19px 13px 15px; font-family:inherit; font-size:14.5px; font-weight:bold; cursor:pointer; box-shadow:0 12px 34px rgba(0,0,0,.55); }
-  .chatfab svg{ width:22px; height:22px; flex:none; color:var(--cyan); }
-  .chatfab .dot{ width:9px; height:9px; border-radius:50%; background:#3ddc74; flex:none; box-shadow:0 0 0 3px rgba(61,220,116,.25); }
-  .chatfab:hover{ background:#0D2650; }
+  .chatfab { position:fixed; right:18px; bottom:18px; z-index:60; display:flex; align-items:center; gap:9px;
+    background:#fff; color:var(--navy); border:2px solid var(--navy); border-radius:999px; padding:12px 18px 12px 14px;
+    font-family:inherit; font-size:14px; font-weight:bold; cursor:pointer; box-shadow:0 10px 28px rgba(16,16,62,.3); }
+  .chatfab svg { width:22px; height:22px; flex:none; color:var(--yel2); }
+  .chatfab .dot { width:9px; height:9px; border-radius:50%; background:#3ddc74; flex:none; box-shadow:0 0 0 3px rgba(61,220,116,.25); }
+  .chatfab:hover { background:var(--bg2); }
   @media (max-width:480px){ .chatfab .fabtxt{ display:none; } .chatfab{ padding:14px; border-radius:50%; } }
-  .chatpanel{ position:fixed; right:18px; bottom:86px; z-index:61; width:362px; max-width:calc(100vw - 24px); height:520px; max-height:calc(100dvh - 110px); background:#071226; border:1px solid var(--line); border-radius:20px; overflow:hidden; display:none; flex-direction:column; box-shadow:0 30px 70px rgba(0,0,0,.65); }
-  .chatpanel.open{ display:flex; }
+  .chatpanel { position:fixed; right:18px; bottom:86px; z-index:61; width:362px; max-width:calc(100vw - 24px);
+    height:520px; max-height:calc(100vh - 110px); background:#fff; border:1px solid var(--line2); border-radius:18px;
+    box-shadow:0 22px 55px rgba(16,16,62,.35); display:none; flex-direction:column; overflow:hidden; }
+  .chatpanel.open { display:flex; }
   @media (max-width:480px){ .chatpanel{ right:12px; bottom:80px; } }
-  .chathead{ background:#0A1F44; border-bottom:2px solid var(--azure); color:#fff; padding:13px 15px; display:flex; align-items:center; gap:11px; flex:none; }
-  .chatava{ width:38px; height:38px; border-radius:50%; background:var(--grad); display:flex; align-items:center; justify-content:center; flex:none; color:#04121F; }
-  .chatava svg{ width:21px; height:21px; }
-  .chathead .ct{ font-size:14.5px; font-weight:bold; line-height:1.25; }
-  .chathead .cs{ font-size:11.5px; opacity:.85; display:flex; align-items:center; gap:5px; color:var(--mut2); }
-  .chathead .cs i{ width:7px; height:7px; border-radius:50%; background:#3ddc74; display:inline-block; }
-  .chatx{ margin-left:auto; background:none; border:none; color:#fff; font-size:21px; line-height:1; cursor:pointer; padding:4px 6px; opacity:.9; }
-  .chatmsgs{ flex:1; overflow-y:auto; padding:14px 12px; background:#050B18; display:flex; flex-direction:column; gap:9px; }
-  .cmsg{ max-width:86%; padding:10px 13px; border-radius:15px; font-size:14px; line-height:1.5; white-space:pre-wrap; }
-  .cmsg.bot{ background:#0A1F44; color:#EAF3FD; align-self:flex-start; border-bottom-left-radius:5px; }
-  .cmsg.user{ background:var(--grad); color:#04121F; font-weight:600; align-self:flex-end; border-bottom-right-radius:5px; }
-  .cmsg a{ color:var(--cyan); font-weight:700; }
-  .cmsg.bot a{ color:var(--cyan); }
-  .chatchips{ flex:none; display:flex; flex-wrap:wrap; gap:7px; padding:10px 12px 4px; background:#050B18; }
-  .chatchips button{ background:#0A1F44; color:#CFE4F8; border:1px solid var(--line); border-radius:99px; font-family:inherit; font-size:12.5px; font-weight:600; padding:8px 12px; cursor:pointer; }
-  .chatchips button:hover{ border-color:var(--azure); color:#fff; }
-  .chatin{ flex:none; display:flex; gap:8px; padding:10px 12px 12px; background:#050B18; }
-  .chatin input{ flex:1; background:#0A1F44; border:1px solid var(--line2); border-radius:99px; color:#fff; font-family:inherit; font-size:14px; padding:11px 15px; outline:none; }
-  .chatin input:focus{ border-color:var(--azure); }
-  .chatin button{ background:var(--grad); border:none; color:#04121F; font-weight:800; font-family:inherit; font-size:14px; border-radius:99px; padding:11px 17px; cursor:pointer; }
+  .chathead { background:var(--navy); border-bottom:3px solid var(--yel); color:#fff; padding:13px 15px; display:flex; align-items:center; gap:11px; flex:none; }
+  .chatava { width:38px; height:38px; border-radius:50%; background:var(--yel); display:flex; align-items:center; justify-content:center; flex:none; color:var(--navy); }
+  .chatava svg { width:21px; height:21px; }
+  .chathead .ct { font-size:14.5px; font-weight:bold; line-height:1.25; }
+  .chathead .cs { font-size:11.5px; opacity:.85; display:flex; align-items:center; gap:5px; color:#c9cbe4; }
+  .chathead .cs i { width:7px; height:7px; border-radius:50%; background:#3ddc74; display:inline-block; }
+  .chatx { margin-left:auto; background:none; border:none; color:#fff; font-size:21px; line-height:1; cursor:pointer; padding:4px 6px; opacity:.9; }
+  .chatmsgs { flex:1; overflow-y:auto; padding:14px 12px; background:var(--bg2); display:flex; flex-direction:column; gap:9px; }
+  .msg { max-width:86%; padding:10px 13px; border-radius:14px; font-size:13.8px; line-height:1.55; white-space:pre-wrap; }
+  .msg.bot { background:#fff; border:1px solid var(--line); color:#26264a; align-self:flex-start; border-bottom-left-radius:4px; }
+  .msg.user { background:var(--navy); color:#fff; align-self:flex-end; border-bottom-right-radius:4px; }
+  .msg.typing span { display:inline-block; width:7px; height:7px; margin-right:3px; border-radius:50%; background:#a3a6c2; animation:tblink 1s infinite; }
+  .msg.typing span:nth-child(2){ animation-delay:.18s; } .msg.typing span:nth-child(3){ animation-delay:.36s; }
+  @keyframes tblink { 0%,100%{ opacity:.25 } 50%{ opacity:1 } }
+  .chatchips { flex:none; display:flex; flex-wrap:wrap; gap:7px; padding:10px 12px 4px; background:var(--bg2); }
+  .chip { border:1.5px solid var(--line2); background:#fff; color:var(--navy); border-radius:999px; padding:10px 14px; min-height:44px;
+    font-size:12.8px; font-weight:bold; cursor:pointer; font-family:inherit; }
+  .chip:hover { border-color:var(--yel2); }
+  .chip.hot { background:var(--yel); border-color:var(--yel2); color:var(--navy); }
+  .chatin { flex:none; display:flex; gap:8px; padding:10px 12px 12px; background:var(--bg2); }
+  .chatin input { flex:1; border:1.5px solid var(--line2); background:#fff; color:var(--txt); border-radius:999px; padding:11px 15px; font-size:14px;
+    font-family:inherit; outline:none; }
+  .chatin input:focus { border-color:var(--yel2); }
+  .chatin button { flex:none; width:42px; height:42px; border-radius:50%; border:none; background:var(--navy); color:#fff;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .chatin button svg { width:19px; height:19px; }
 </style>
 </head>
 <body>
 
-<header class="top">
-  <div class="wrap topbar">
-    <a class="brand" href="#top" aria-label="LA Fitness Orlando Orange Ave home">
-      <span class="bname">LA <span>FITNESS</span></span>
-      <span class="bsub">Orlando · Orange Ave — SoDo</span>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="LA Fitness — Orlando Orange Ave, home">
+    <span class="bname">LA<span class="bar">|</span>FITNESS</span>
+    <span class="bsub">Orlando · Orange Ave — SoDo</span>
+  </a>
+  <span class="demopill">CONCEPT DEMO</span>
+  <div class="top-actions">
+    <a class="callbtn" href="tel:+13217326018" aria-label="Call the club at (321) 732-6018">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg>
+      <span class="callnum">(321) 732-6018</span>
     </a>
-    <span class="demopill">CONCEPT DEMO</span>
-    <a class="topcall" href="tel:+13217326018" aria-label="Call the club at 321 732 6018">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-      <span class="pct">(321) 732-6018</span><span>Call</span>
-    </a>
+    <a class="bookbtn" href="#pass">Free Guest Pass</a>
   </div>
 </header>
 
 <nav class="icons" aria-label="Site sections">
-  <a href="#amenities"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11"/><path d="M17.5 6.5v11"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6.5 12h11"/><path d="M1.5 10.5v3"/><path d="M22.5 10.5v3"/></svg>Amenities</a>
-  <a href="#classes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>Classes</a>
-  <a href="#training"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Training</a>
-  <a href="#stories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l2.95 5.98 6.6.96-4.78 4.66 1.13 6.58L12 17.57l-5.9 3.1 1.13-6.57L2.45 9.44l6.6-.96z"/></svg>Reviews</a>
-  <a href="#visit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Visit</a>
-  <a href="#pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>Free Pass</a>
+  <a href="#pillars"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg>Amenities</a>
+  <a href="#classes"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Classes</a>
+  <a href="#training"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>Training</a>
+  <a href="#stories"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2z"/></svg>Reviews</a>
+  <a href="#visit"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Visit</a>
+  <a href="#pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg>Free Pass</a>
 </nav>
 
-<main id="top">
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-    <div class="hbg"><img id="heroImg" src="assets/hero-floor.jpg" alt="Training floor of a premium Orlando health club at dawn" fetchpriority="high"></div>
-    <div class="scrim"></div>
-    <div class="wrap hcontent">
-      <div class="statuspill" id="statusPill"><i></i><span id="statusText">Checking today's hours…</span></div>
-      <p class="eyebrow">15 W Crystal Lake St · SoDo · Orlando</p>
-      <h1>LA Fitness — Orlando <span class="blu">Orange Ave</span></h1>
-      <p class="hsub">Pool, courts, iron and 16 classes a week — one full-service club in the heart of SoDo, open at 5 AM on weekdays for the early shift and built for every level after it.</p>
-      <div class="hctas">
-        <a class="btn primary" href="#pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg>Claim a Free Guest Pass</a>
-        <a class="btn ghost" href="tel:+13217326018"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call the Club</a>
-      </div>
-      <figure class="reviewchip">
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <blockquote>“Franco and Samantha are the best! So helpful and accommodating!!”</blockquote>
-        <figcaption>— Codie T., Google review · Club rated <b>4.7 ★</b> from 450+ Google reviews</figcaption>
-      </figure>
+<!-- ================= HERO ================= -->
+<div class="hero" id="top">
+  <div class="hero-video" id="heroVideo" data-vimeo="1023351969" aria-hidden="true"></div>
+  <div class="hero-in">
+    <span class="demopill">CONCEPT DEMO</span>
+    <div class="statuspill" id="statusPill"><i></i><span id="statusText">Checking today's hours…</span></div>
+    <div class="herorev">
+      <span class="hr-quote">&ldquo;</span>
+      <span class="hr-stars" aria-hidden="true">★★★★★</span>
+      <p class="hr-text">Franco and Samantha are the best! So helpful and accommodating!!</p>
+      <p class="hr-name">Codie T. — Google Review · Club Rated 4.7 ★ From 450+ Reviews</p>
     </div>
-  </section>
+    <span class="kick">Orlando · Orange Ave — SoDo</span>
+    <h1>SoDo's Home for <span class="yl">Every Kind of Training</span></h1>
+    <p class="tag">Welcome to LA Fitness — Orlando · Orange Ave. <strong>Pool, courts, iron and 16 classes a week</strong> under one roof at 15 W Crystal Lake St — open at <strong>5 AM on weekdays</strong> for the early shift, and built for every level after it.</p>
+    <div class="ctas">
+      <a class="btn btn-yel" href="#pass"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/><path d="M13 5v2M13 17v2M13 11v2"/></svg> Claim a Free Guest Pass</a>
+      <a class="btn btn-line" href="tel:+13217326018"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> (321) 732-6018</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>4.7 <span class="yl">★</span></b><span>Google Rating · 450+ Member Reviews</span></div>
+      <div class="stat"><b>5 <span class="yl">AM</span></b><span>Weekday Open · Mon–Thu Til 11 PM</span></div>
+      <div class="stat"><b>16 <span class="yl">Classes</span></b><span>Every Week · Included With Membership</span></div>
+    </div>
+  </div>
+</div>
 
-  <!-- ================= STATS ================= -->
-  <div class="stats" aria-label="Club highlights">
-    <div class="wrap">
-      <div class="stat"><div class="n">4.7<span>★</span></div><div class="l">Google Rating</div></div>
-      <div class="stat"><div class="n">450<span>+</span></div><div class="l">Member Reviews</div></div>
-      <div class="stat"><div class="n">5<span> AM</span></div><div class="l">Weekday Open</div></div>
-      <div class="stat"><div class="n">16</div><div class="l">Classes Weekly</div></div>
+<div class="mantra">
+  <p>It's not one workout. <b>It's every workout</b> — swim, lift, run the court, take the class, recover — <span class="yl">all under one roof in SoDo.</span></p>
+</div>
+
+<!-- ================= PILLARS ================= -->
+<section id="pillars">
+  <p class="eyebrow">Inside the Club</p>
+  <h2>Four Ways to <span class="yl">Train</span></h2>
+  <div class="divider"></div>
+  <p class="sub">Everything at the Orange Ave club groups into four pillars — aquatics, iron, classes, and recovery. One membership, all of it.</p>
+  <div class="grid4">
+    <div class="pillar">
+      <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M8 3v13"/><path d="M16 3v13"/></svg></div>
+      <h3>Pool &amp; Aquatics</h3>
+      <p class="pline">Swim year-round — no Florida thunderstorm ever cancels your workout.</p>
+      <ul><li>Indoor lap pool, open every club hour</li><li>Aqua Fit classes weekly</li><li>Whirlpool spa poolside</li><li>Low-impact training for every level</li></ul>
+    </div>
+    <div class="pillar">
+      <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg></div>
+      <h3>Strength &amp; Cardio</h3>
+      <p class="pline">Rows of cardio, full free-weight runs, and a full indoor court.</p>
+      <ul><li>Free weights &amp; strength machines</li><li>Cardio floor with room to move</li><li>Full indoor basketball court</li><li>Cycle studio</li></ul>
+    </div>
+    <div class="pillar">
+      <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+      <h3>Group Fitness</h3>
+      <p class="pline">16 sessions a week with real instructors — included, no extra charge.</p>
+      <ul><li>Zumba® &amp; Zumba Gold®</li><li>Yoga &amp; Mat Pilates</li><li>Aqua Fit &amp; Body Works Plus Abs</li><li>Cycle &amp; Kickbox Cardio in the lineup</li></ul>
+    </div>
+    <div class="pillar">
+      <div class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 2.5.5 5 2.5 5 6a5 5 0 0 1-10 0c0-1.5.5-3 1.5-4 .5 1 1 2 2 3.5z"/><path d="M12 2v3"/></svg></div>
+      <h3>Recovery &amp; Spa</h3>
+      <p class="pline">The perfect ending to a session — members say so themselves.</p>
+      <ul><li>Sauna</li><li>Steam room</li><li>Whirlpool spa</li><li>Full locker rooms with showers</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FEATURE ROWS ================= -->
+<section id="training">
+  <p class="eyebrow">Take the Tour</p>
+  <h2>Inside the <span class="yl">Club</span></h2>
+  <div class="divider"></div>
+  <p class="sub">Swim before work, run the court at lunch, lift heavy at night, recover in the sauna after. No bouncing between gyms — it's all here.</p>
+
+  <div class="prog" id="pool">
+    <figure class="photo p-media" data-slot="pool"><img src="assets/laf-pool.jpg" alt="Swimmer training freestyle in an indoor lap pool — LA Fitness photo" loading="lazy"></figure>
+    <div>
+      <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M8 3v13"/><path d="M16 3v13"/></svg></span><span class="p-tag">Aquatics</span></div>
+      <h3>Indoor Lap Pool</h3>
+      <p>Lap swimming and Aqua Fit classes year-round in a real indoor pool — the kind of amenity most Orlando gyms simply don't have. Train low-impact, cross-train around an injury, or just start the day in the water.</p>
+      <ul>
+        <li>Open every club hour, weather never cancels it</li>
+        <li>Aqua Fit — Wednesdays 8:30 AM with Blanca</li>
+        <li>Whirlpool spa right there for after</li>
+      </ul>
+      <a class="mini" href="#pass">Try It Free</a>
     </div>
   </div>
 
-  <!-- ================= AMENITIES ================= -->
-  <section class="sec wrap" id="amenities">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Club Amenities</p>
-      <h2>Club Amenities: Indoor Pool, Sauna, Free Weights &amp; Courts</h2>
-      <p>Everything under one roof in the SoDo Shopping Center — swim before work, run the court at lunch, lift heavy at night, recover in the sauna after. No bouncing between gyms.</p>
+  <div class="prog flip" id="court">
+    <figure class="photo p-media" data-slot="court"><img src="assets/laf-courts.jpg" alt="League basketball game on the indoor court at LA Fitness" loading="lazy"></figure>
+    <div>
+      <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3.5 9h17"/><path d="M3.5 15h17"/></svg></span><span class="p-tag">Hoops</span></div>
+      <h3>Basketball Court</h3>
+      <p>A full indoor court for pickup runs, shooting work and league-style games — rain or shine, morning to close. Bring your game by anytime the club is open.</p>
+      <ul>
+        <li>Full-size indoor court</li>
+        <li>Pickup runs and solo shooting work</li>
+        <li>Open during all club hours</li>
+      </ul>
+      <a class="mini" href="#pass">Try It Free</a>
     </div>
-    <div class="cards">
-      <article class="card reveal"><img src="assets/pool.jpg" alt="Indoor lap pool with swimmers" loading="lazy">
-        <div class="cbody">
-          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1"/><path d="M8 3v13"/><path d="M16 3v13"/></svg></div>
-          <h3>Indoor Lap Pool</h3><p>Lap swimming and Aqua Fit classes year-round — no Florida thunderstorm ever cancels your workout.</p>
-        </div></article>
-      <article class="card reveal"><img src="assets/court.jpg" alt="Indoor basketball court during a pickup game" loading="lazy">
-        <div class="cbody">
-          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/><path d="M3.5 9h17"/><path d="M3.5 15h17"/></svg></div>
-          <h3>Basketball Court</h3><p>A full indoor court for pickup runs, shooting work and league-style games — rain or shine.</p>
-        </div></article>
-      <article class="card reveal"><img src="assets/classes.jpg" alt="Group fitness class in motion" loading="lazy">
-        <div class="cbody">
-          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-          <h3>Group Fitness</h3><p>Zumba®, Yoga, Aqua Fit, Mat Pilates, Cycle and more — included with membership at no additional charge.</p>
-        </div></article>
-      <article class="card reveal"><img src="assets/recovery.jpg" alt="Sauna and recovery area" loading="lazy">
-        <div class="cbody">
-          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3 2.5.5 5 2.5 5 6a5 5 0 0 1-10 0c0-1.5.5-3 1.5-4 .5 1 1 2 2 3.5z"/><path d="M12 2v3"/></svg></div>
-          <h3>Sauna, Steam &amp; Spa</h3><p>Sauna, steam room and whirlpool spa — the recovery suite members call the perfect ending to a session.</p>
-        </div></article>
-      <article class="card reveal"><img src="assets/training.jpg" alt="Personal trainer coaching a client with dumbbells" loading="lazy">
-        <div class="cbody">
-          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div>
-          <h3>Personal Training</h3><p>Certified trainers and Master Trainers who build the plan around your goals — and keep you honest.</p>
-        </div></article>
-      <article class="card reveal"><img src="assets/hero-floor.jpg" alt="Cardio and strength training floor" loading="lazy">
-        <div class="cbody">
-          <div class="cic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11"/><path d="M17.5 6.5v11"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6.5 12h11"/></svg></div>
-          <h3>Cardio &amp; Strength Floors</h3><p>Rows of cardio, full free-weight runs and strength machines across a spacious two-zone floor.</p>
-        </div></article>
-    </div>
-    <div class="chiprow reveal" aria-label="More amenities">
-      <span class="chip"><b>+</b> Whirlpool Spa</span><span class="chip"><b>+</b> Locker Rooms</span><span class="chip"><b>+</b> Cycle Studio</span><span class="chip"><b>+</b> Free Weights</span><span class="chip"><b>+</b> Kickbox Cardio</span><span class="chip"><b>+</b> Zumba Gold®</span><span class="chip"><b>+</b> Free Parking at SoDo</span>
-    </div>
-  </section>
+  </div>
 
-  <!-- ================= CLASSES ================= -->
-  <section class="sec wrap" id="classes">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Group Fitness</p>
-      <h2>Group Fitness Class Schedule at Orange Ave</h2>
-      <p>Real classes, real instructors, every week — and group fitness is included with membership at no additional charge. Today's column is highlighted.</p>
+  <div class="prog" id="classes-row">
+    <figure class="photo p-media" data-slot="classes"><img src="assets/laf-classes.jpg" alt="Group fitness class training together in a studio — LA Fitness photo" loading="lazy"></figure>
+    <div>
+      <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><span class="p-tag">Group Fitness</span></div>
+      <h3>Classes With Real Instructors</h3>
+      <p>Zumba®, Yoga, Aqua Fit, Mat Pilates, Body Works Plus Abs and more — 16 sessions a week, every one led by a named instructor, and every one included with membership at no additional charge.</p>
+      <ul>
+        <li>16 sessions a week on the current grid</li>
+        <li>Morning and evening slots</li>
+        <li>Included with membership — no class fees</li>
+      </ul>
+      <a class="mini" href="#classes">See the Schedule</a>
     </div>
-    <div class="schedwrap reveal">
-      <table class="sched" id="schedTable" aria-label="Weekly class schedule">
-        <thead><tr><th>Time</th><th data-day="0">Sun</th><th data-day="1">Mon</th><th data-day="2">Tue</th><th data-day="3">Wed</th><th data-day="4">Thu</th><th data-day="5">Fri</th><th data-day="6">Sat</th></tr></thead>
-        <tbody>
-          <tr><th>8:30 AM</th><td data-day="0"></td><td data-day="1"></td><td data-day="2"><span class="cls">Body Works Plus Abs</span><span class="ins">Blanca</span></td><td data-day="3"><span class="cls">Aqua Fit</span><span class="ins">Blanca</span></td><td data-day="4"></td><td data-day="5"></td><td data-day="6"><span class="cls">Body Works Plus Abs</span><span class="ins">Mauricio</span></td></tr>
-          <tr><th>9:45 AM</th><td data-day="0"></td><td data-day="1"><span class="cls">Zumba®</span><span class="ins">Valdemiro</span></td><td data-day="2"><span class="cls">Mat Pilates</span><span class="ins">Blanca</span></td><td data-day="3"><span class="cls">Yoga</span><span class="ins">Blanca</span></td><td data-day="4"><span class="cls">Mat Pilates</span><span class="ins">Blanca</span></td><td data-day="5"></td><td data-day="6"><span class="cls">Zumba®</span><span class="ins">Mauricio</span></td></tr>
-          <tr><th>11:00 AM</th><td data-day="0"><span class="cls">Yoga</span><span class="ins">Darlene</span></td><td data-day="1"><span class="cls">Yoga</span><span class="ins">Elena</span></td><td data-day="2"><span class="cls">Zumba Gold®</span><span class="ins">Janet</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba Gold®</span><span class="ins">Mariuxi</span></td><td data-day="5"></td><td data-day="6"><span class="cls">Yoga</span><span class="ins">Chrystal</span></td></tr>
-          <tr><th>5:45 PM</th><td data-day="0"></td><td data-day="1"><span class="cls">Zumba®</span><span class="ins">Valdemiro</span></td><td data-day="2"></td><td data-day="3"></td><td data-day="4"></td><td data-day="5"></td><td data-day="6"></td></tr>
-          <tr><th>7:00 PM</th><td data-day="0"></td><td data-day="1"></td><td data-day="2"><span class="cls">Zumba®</span><span class="ins">Maria M</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba®</span><span class="ins">Zoe</span></td><td data-day="5"></td><td data-day="6"></td></tr>
-        </tbody>
+  </div>
+
+  <div class="prog flip" id="coaching">
+    <figure class="photo p-media" data-slot="training"><img src="assets/laf-training.jpg" alt="Personal trainer coaching a client during a workout — LA Fitness photo" loading="lazy"></figure>
+    <div>
+      <div class="p-ic"><span class="pic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span><span class="p-tag">One-on-One Coaching</span></div>
+      <h3>Personal Training</h3>
+      <p>This club's training team includes four Master Trainers — Tai V., Dervens J., Jaiden M. and Sebastian S. — the top tier on the LA Fitness coaching ladder. You get a program built around your goals, your schedule and your body, then a coach who tracks every session with you.</p>
+      <ul>
+        <li>Four Master Trainers on this club's team</li>
+        <li>A plan built around your goals — not a template</li>
+        <li>Start with a free guest pass and meet the team</li>
+      </ul>
+      <a class="mini" href="tel:+13217326018">Call the Club</a><a class="mini ghost" href="#pass">Free Pass First</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SCHEDULE ================= -->
+<section id="classes">
+  <p class="eyebrow">Group Fitness</p>
+  <h2>This Week's <span class="yl">Class Schedule</span></h2>
+  <div class="divider"></div>
+  <p class="sub">Real classes, real instructors, every week — group fitness is included with membership at no additional charge. Today's column is highlighted.</p>
+  <div class="schedwrap">
+    <table class="sched" id="schedTable" aria-label="Weekly class schedule">
+      <thead><tr><th>Time</th><th data-day="0">Sun</th><th data-day="1">Mon</th><th data-day="2">Tue</th><th data-day="3">Wed</th><th data-day="4">Thu</th><th data-day="5">Fri</th><th data-day="6">Sat</th></tr></thead>
+      <tbody>
+        <tr><th>8:30 AM</th><td data-day="0"></td><td data-day="1"></td><td data-day="2"><span class="cls">Body Works Plus Abs</span><span class="ins">Blanca</span></td><td data-day="3"><span class="cls">Aqua Fit</span><span class="ins">Blanca</span></td><td data-day="4"></td><td data-day="5"></td><td data-day="6"><span class="cls">Body Works Plus Abs</span><span class="ins">Mauricio</span></td></tr>
+        <tr><th>9:45 AM</th><td data-day="0"></td><td data-day="1"><span class="cls">Zumba®</span><span class="ins">Valdemiro</span></td><td data-day="2"><span class="cls">Mat Pilates</span><span class="ins">Blanca</span></td><td data-day="3"><span class="cls">Yoga</span><span class="ins">Blanca</span></td><td data-day="4"><span class="cls">Mat Pilates</span><span class="ins">Blanca</span></td><td data-day="5"></td><td data-day="6"><span class="cls">Zumba®</span><span class="ins">Mauricio</span></td></tr>
+        <tr><th>11:00 AM</th><td data-day="0"><span class="cls">Yoga</span><span class="ins">Darlene</span></td><td data-day="1"><span class="cls">Yoga</span><span class="ins">Elena</span></td><td data-day="2"><span class="cls">Zumba Gold®</span><span class="ins">Janet</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba Gold®</span><span class="ins">Mariuxi</span></td><td data-day="5"></td><td data-day="6"><span class="cls">Yoga</span><span class="ins">Chrystal</span></td></tr>
+        <tr><th>5:45 PM</th><td data-day="0"></td><td data-day="1"><span class="cls">Zumba®</span><span class="ins">Valdemiro</span></td><td data-day="2"></td><td data-day="3"></td><td data-day="4"></td><td data-day="5"></td><td data-day="6"></td></tr>
+        <tr><th>7:00 PM</th><td data-day="0"></td><td data-day="1"></td><td data-day="2"><span class="cls">Zumba®</span><span class="ins">Maria M</span></td><td data-day="3"></td><td data-day="4"><span class="cls">Zumba®</span><span class="ins">Zoe</span></td><td data-day="5"></td><td data-day="6"></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="schednote">Schedule as published on lafitness.com (last updated Nov 11, 2026) — instructors and times can change, so confirm in club or on the LA Fitness app before you head over. Thanksgiving Day (Thu, Nov 26) the club runs holiday hours, 8 AM–12 PM, and some classes are cancelled.</p>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section id="watch">
+  <p class="eyebrow">Watch</p>
+  <h2>See It <span class="yl">In Motion</span></h2>
+  <div class="divider"></div>
+  <p class="sub">LA Fitness's own tour and class videos — the floor, the pool, the courts and the coaching, exactly as the club films them. Tap any tile to play.</p>
+  <div class="videogrid">
+    <button class="vtile" data-vimeo="531020893" aria-label="Play the weight room tour video"><img src="assets/laf-weight-room.jpg" alt="Member training with dumbbells in the free-weight area at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Weight Room</span></button>
+    <button class="vtile" data-vimeo="531020567" aria-label="Play the pool tour video"><img src="assets/laf-pool.jpg" alt="Swimmer in the indoor lap pool" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">The Pool</span></button>
+    <button class="vtile" data-vimeo="531020114" aria-label="Play the courts and leagues video"><img src="assets/laf-courts.jpg" alt="League basketball at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Courts &amp; Leagues</span></button>
+    <button class="vtile" data-vimeo="589467508" aria-label="Play the personal training video"><img src="assets/laf-training.jpg" alt="Personal training session at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Personal Training</span></button>
+    <button class="vtile" data-vimeo="531019529" aria-label="Play the cardio tour video"><img src="assets/laf-cardio.jpg" alt="Cardio floor at LA Fitness" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Cardio Floor</span></button>
+    <button class="vtile" data-vimeo="1080601203" aria-label="Play the Zumba class video"><img src="assets/laf-classes.jpg" alt="Zumba group fitness class" loading="lazy"><span class="vplay"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="vlabel">Zumba® Class</span></button>
+  </div>
+</section>
+
+<section id="start">
+  <p class="eyebrow">Getting Started</p>
+  <h2>Three Steps to <span class="yl">Your First Workout</span></h2>
+  <div class="divider"></div>
+  <p class="sub">No pressure and no guesswork. Here's exactly how a first visit works.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h3>Claim Your Free Pass</h3><p>Call (321) 732-6018 and ask for a free guest pass. The club team will set it up — no form, no obligation.</p></div>
+    <div class="step"><div class="num">2</div><h3>Tour &amp; Train</h3><p>Walk the floor, take a class, swim a few laps, finish in the sauna. Try the whole club the way members actually use it.</p></div>
+    <div class="step"><div class="num">3</div><h3>Pick Your Plan at the Club</h3><p>Membership options and current offers vary, so the club team walks you through today's offers in person — straight, with nothing hidden.</p></div>
+  </div>
+</section>
+
+<div class="bandphoto" data-slot="recovery-band"><img src="assets/recovery.jpg" alt="Warm wooden sauna interior" loading="lazy"></div>
+
+<!-- ================= STORIES ================= -->
+<section id="stories">
+  <p class="eyebrow">Member Reviews</p>
+  <h2>Real Ratings, <span class="yl">Real Voices</span></h2>
+  <div class="divider"></div>
+  <p class="sub">What local members say about the Orange Ave club on Google.</p>
+  <div class="story-grid">
+    <div class="story">
+      <p class="s-head">&ldquo;Franco and Samantha are the best!&rdquo;</p>
+      <p class="s-body">Franco and Samantha are the best! So helpful and accommodating!!</p>
+      <p class="s-name"><b>Codie T.</b><span>Google Review · Apr 2024</span></p>
+    </div>
+    <div class="story">
+      <div class="score">4.7</div>
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <p class="plain">From <b>450+ Google reviews</b> for the Crystal Lake club — one of the strongest-rated full-service gyms in South Downtown Orlando.</p>
+      <p class="s-name"><b>Google Rating</b><span>Orange Ave · 32806</span></p>
+    </div>
+    <div class="story">
+      <ul>
+        <li>The indoor pool</li>
+        <li>Pickup hoops on the court</li>
+        <li>The sauna finish</li>
+        <li>Class energy &amp; instructors</li>
+        <li>Helpful front-desk staff</li>
+        <li>Space to actually train</li>
+      </ul>
+      <p class="s-name"><b>What Members Come For</b><span>Review Themes</span></p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="aboutgrid">
+    <figure class="photo" data-slot="about-club"><img src="assets/club-1381.jpg" alt="The actual LA Fitness Orlando–Orange Ave club building in SoDo, Orlando" loading="lazy"></figure>
+    <div class="abouttxt">
+      <p class="eyebrow">About the Club</p>
+      <h2>Built for <span class="yl">South Downtown</span></h2>
+      <div class="divider"></div>
+      <p>The Orange Ave club sits inside the <strong>SoDo Shopping Center</strong> at 15 W Crystal Lake St — minutes from downtown and Orlando Health. Doors open at <strong>5 AM on weekdays</strong>, built for commuters who train before the shift and for anyone who wants a coach in their corner after it.</p>
+      <p>It's a full-service club in the truest sense: an <strong>indoor lap pool</strong>, a <strong>full basketball court</strong>, complete strength and cardio floors, a 16-class weekly schedule, four Master Trainers, and a sauna-steam-whirlpool recovery suite to finish.</p>
+      <p>That's the standard for everyone who walks in — the early-shift nurse, the downtown analyst, the pickup-run regular, and the first-timer on a free guest pass.</p>
+      <div class="cred">
+        <span class="chip2"><span class="yl">4.7 ★</span> Google Rating</span>
+        <span class="chip2">Indoor <span class="yl">Pool</span></span>
+        <span class="chip2">SoDo, <span class="yl">Orlando</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FREE PASS CTA ================= -->
+<div class="ctaband" id="pass">
+  <p class="eyebrow">Free Guest Pass</p>
+  <h2>Your First Visit Is <span class="yl">Free</span></h2>
+  <p>Tour the floor, take a class, swim a few laps, finish in the sauna — then decide. Membership options and current offers vary, so the club team will walk you through today's offers in person or by phone.</p>
+  <div class="ctas">
+    <a class="btn btn-yel" href="tel:+13217326018"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.13.96.36 1.9.7 2.8a2 2 0 0 1-.45 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0 1 22 16.9z"/></svg> Call to Claim Your Pass</a>
+    <a class="btn btn-line" href="#visit">Plan Your Visit</a>
+  </div>
+</div>
+
+<!-- ================= VISIT ================= -->
+<section id="visit">
+  <p class="eyebrow">Visit Us</p>
+  <h2>Hours &amp; <span class="yl">Location</span></h2>
+  <div class="divider"></div>
+  <div class="visitgrid">
+    <div class="vcard">
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Club Hours</h3>
+      <table class="hours" id="hoursTable">
+        <tr data-days="1,2,3,4"><td>Monday – Thursday</td><td>5:00 AM – 11:00 PM</td></tr>
+        <tr data-days="5"><td>Friday</td><td>5:00 AM – 9:00 PM</td></tr>
+        <tr data-days="6,0"><td>Saturday – Sunday</td><td>8:00 AM – 7:00 PM</td></tr>
       </table>
+      <div class="alert"><b>Thanksgiving — Thu, Nov 26:</b> special holiday hours, 8:00 AM – 12:00 PM.</div>
+      <p class="addr-note" style="margin-top:14px;margin-bottom:0">Holiday hours may vary. Registration No. HS15718.</p>
     </div>
-    <p class="schednote">Schedule as published on lafitness.com (last updated Nov 11, 2026) — instructors and times can change, so confirm in club or on the LA Fitness app before you head over. Thanksgiving Day (Thu, Nov 26) the club runs holiday hours, 8 AM–12 PM, and some classes are cancelled.</p>
-  </section>
-
-  <!-- ================= TRAINING ================= -->
-  <section class="sec wrap" id="training">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Personal Training</p>
-      <h2>Certified Personal Training &amp; Fitness Coaching</h2>
-      <p>Doors open at 5 AM on weekdays — built for Orlando Health and downtown commuters who train before the shift, and for anyone who wants a coach in their corner after it.</p>
+    <div class="vcard">
+      <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> Find Us in SoDo</h3>
+      <p class="addr"><strong>LA Fitness — Orlando · Orange Ave</strong><br>15 W Crystal Lake St<br>Orlando, FL 32806</p>
+      <p class="addr-note">Inside the SoDo Shopping Center, just south of downtown off S Orange Ave. Free parking on site.</p>
+      <a class="mini" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+15+W+Crystal+Lake+St+Orlando+FL+32806" target="_blank" rel="noopener">Get Directions</a>
+      <a class="mini ghost" href="tel:+13217326018">Call the Club</a>
+      <div class="alert blue"><b>Kids Klub:</b> childcare is <b>currently closed</b> at this club. We'll update this page the moment it reopens — please plan your visit accordingly.</div>
     </div>
-    <div class="split">
-      <div class="imgpanel reveal"><img src="assets/training.jpg" alt="Personal training session on the strength floor" loading="lazy"></div>
-      <div class="panel reveal">
-        <h3>Train with a Master Trainer</h3>
-        <p>This club's training team includes four Master Trainers — the top tier on the LA Fitness coaching ladder. You get a program built around your goals, your schedule and your body, then a coach who tracks every session with you.</p>
-        <p>New to training? Your first step is a free guest pass and a walk-through with the team — no pressure, just a plan.</p>
-        <div class="trainers">
-          <div class="trainer"><div class="tn">Tai V.</div><div class="tt">Master Trainer</div></div>
-          <div class="trainer"><div class="tn">Dervens J.</div><div class="tt">Master Trainer</div></div>
-          <div class="trainer"><div class="tn">Jaiden M.</div><div class="tt">Master Trainer</div></div>
-          <div class="trainer"><div class="tn">Sebastian S.</div><div class="tt">Master Trainer</div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= STORIES / REVIEWS ================= -->
-  <section class="sec wrap" id="stories">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Member Reviews</p>
-      <h2>What Local Members Say (4.7-Star Rated on Google)</h2>
-    </div>
-    <div class="panel reveal">
-      <div class="bigscore">
-        <div class="score">4.7</div>
-        <div>
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <p class="sc">From <b>450+ Google reviews</b> for the Crystal Lake club — one of the strongest-rated full-service gyms in South Downtown Orlando.</p>
-        </div>
-      </div>
-      <figure class="quotecard">
-        <blockquote>“Franco and Samantha are the best! So helpful and accommodating!!”</blockquote>
-        <figcaption>— Codie T., Google review</figcaption>
-      </figure>
-      <div class="chiprow">
-        <span class="chip">Members love: <b>the pool</b></span><span class="chip"><b>pickup hoops</b></span><span class="chip"><b>sauna finish</b></span><span class="chip"><b>class energy</b></span><span class="chip"><b>helpful staff</b></span><span class="chip"><b>space to train</b></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= VISIT ================= -->
-  <section class="sec wrap" id="visit">
-    <div class="sec-head reveal">
-      <p class="eyebrow">Visit the Club</p>
-      <h2>Gym Location &amp; Hours in South Downtown Orlando (32806)</h2>
-    </div>
-    <div class="visitgrid">
-      <div class="vcard reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>Find Us</h3>
-        <p class="addr">15 W Crystal Lake St<br>Orlando, FL 32806</p>
-        <p class="addrsub">Inside the SoDo Shopping Center, just south of downtown off S Orange Ave. Free parking on site.</p>
-        <div class="hctas" style="margin-top:6px">
-          <a class="btn primary" href="https://www.google.com/maps/search/?api=1&amp;query=LA+Fitness+15+W+Crystal+Lake+St+Orlando+FL+32806" target="_blank" rel="noopener">Get Directions</a>
-          <a class="btn ghost" href="tel:+13217326018">Call (321) 732-6018</a>
-        </div>
-        <div class="alert blue"><b>Kids Klub:</b> childcare is <b>currently closed</b> at this club. We'll update this page the moment it reopens — please plan your visit accordingly.</div>
-      </div>
-      <div class="vcard reveal">
-        <h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Club Hours</h3>
-        <table class="hours" id="hoursTable">
-          <tr data-days="1,2,3,4"><td>Monday – Thursday</td><td>5:00 AM – 11:00 PM</td></tr>
-          <tr data-days="5"><td>Friday</td><td>5:00 AM – 9:00 PM</td></tr>
-          <tr data-days="6,0"><td>Saturday – Sunday</td><td>8:00 AM – 7:00 PM</td></tr>
-        </table>
-        <div class="alert"><b>Thanksgiving — Thu, Nov 26:</b> special holiday hours, 8:00 AM – 12:00 PM.</div>
-        <p class="schednote" style="margin-top:14px">Holiday hours may vary. Registration No. HS15718.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================= FREE PASS ================= -->
-  <section class="wrap" id="pass">
-    <div class="passband reveal">
-      <img src="assets/pool.jpg" alt="" aria-hidden="true" loading="lazy">
-      <div class="pbody">
-        <p class="eyebrow">Free Guest Pass</p>
-        <h2>Claim Your Free LA Fitness Guest Pass</h2>
-        <p>Your first visit is on the club. Tour the floor, take a class, swim a few laps, finish in the sauna — then decide. Membership options and current offers vary, so the club team will walk you through today's offers in person or by phone.</p>
-        <div class="hctas">
-          <a class="btn primary" href="tel:+13217326018"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call to Claim Your Pass</a>
-          <a class="btn ghost" href="#visit">Plan Your Visit</a>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="wrap">
-    <div class="fbrand">LA <span>FITNESS</span> <span style="color:var(--mut); font-size:13px; font-weight:700; letter-spacing:.14em;">ORLANDO · ORANGE AVE</span></div>
-    <nav class="fnav" aria-label="Footer">
-      <a href="#amenities">Amenities</a> · <a href="#classes">Classes</a> · <a href="#training">Training</a> · <a href="#stories">Reviews</a> · <a href="#visit">Visit</a> · <a href="#pass">Free Pass</a> · <a href="tel:+13217326018">(321) 732-6018</a>
-    </nav>
-    <p class="fine">Concept demo — not affiliated with or endorsed by LA Fitness. This page is a design concept built by Pinnacle Tech to show what a modern club page can be. Club facts (hours, amenities, class schedule, phone) were sourced from lafitness.com on Nov 20, 2026 and can change — confirm details with the club. Imagery is AI-generated concept photography, not photos of the actual club. Membership pricing is set by the club and is not published here.</p>
-    <p class="built">Built by <b>Pinnacle Tech</b>, Orlando FL</p>
   </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="flogo">LA<span class="bar">|</span>FITNESS</div>
+  <div class="fsub">Orlando · Orange Ave — SoDo</div>
+  <p class="faddr">15 W Crystal Lake St, Orlando, FL 32806<br>
+  <a href="tel:+13217326018">(321) 732-6018</a> · Mon–Thu 5 AM–11 PM · Fri 5 AM–9 PM · Sat–Sun 8 AM–7 PM</p>
+  <div class="fnav">
+    <a href="#pillars">Amenities</a><a href="#classes">Classes</a><a href="#training">Tour</a><a href="#stories">Reviews</a><a href="#about">About</a><a href="#visit">Visit</a><a href="#pass">Free Pass</a>
+  </div>
+  <p class="fsmall">Concept demo — not affiliated with or endorsed by LA Fitness. This page is a design concept built by Pinnacle Tech to show what a modern club page can be. Club facts (hours, amenities, class schedule, phone) were sourced from lafitness.com on Nov 20, 2026 and can change — confirm details with the club. Photography and video are LA Fitness's own, via lafitness.com (credited below) — the building shown is this club's actual location; the sauna photo is stock, credited below. Membership pricing is set by the club and is not published here.<br><span class="credit">Built by Pinnacle Tech, Orlando FL</span></p>
+  <p class="fcredits">Photo &amp; video credits: Club exterior (this location), pool, courts, classes, personal training, weight room and cardio photography, the free-pass band image, and all videos — © LA Fitness / Fitness International, LLC, via lafitness.com and LA Fitness's official Vimeo. Sauna photo — Max Vakhtbovych via Pexels (free to use under the Pexels License).</p>
 </footer>
 
-<!-- ================= AI CHAT ================= -->
-<button class="chatfab" id="chatFab" aria-label="Open the club assistant chat">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-  <span class="fabtxt">Ask the Club</span><span class="dot" aria-hidden="true"></span>
+<!-- ================= AI CHATBOT ================= -->
+<button class="chatfab" id="chatFab" aria-label="Chat with the club assistant" aria-controls="chatPanel" aria-expanded="false">
+  <span class="dot" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.3c-1.5 0-3-.4-4.2-1.1L3 20l1.4-5.1A8.3 8.3 0 0 1 3 11.5 8.4 8.4 0 0 1 11.5 3h1A8.4 8.4 0 0 1 21 11.5z"/></svg>
+  <span class="fabtxt">Ask the Club</span>
 </button>
-
-<div class="chatpanel" id="chatPanel" role="dialog" aria-label="Club assistant">
+<div class="chatpanel" id="chatPanel" role="dialog" aria-modal="true" aria-label="Chat with the club assistant">
   <div class="chathead">
-    <div class="chatava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5v11"/><path d="M17.5 6.5v11"/><path d="M3 9v6"/><path d="M21 9v6"/><path d="M6.5 12h11"/></svg></div>
+    <div class="chatava"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/></svg></div>
     <div>
       <div class="ct">Club Assistant</div>
       <div class="cs"><i></i> LA Fitness · Orange Ave — replies instantly</div>
     </div>
-    <button class="chatx" id="chatClose" aria-label="Close chat">×</button>
+    <button class="chatx" id="chatClose" aria-label="Close chat">&times;</button>
   </div>
-  <div class="chatmsgs" id="chatMsgs"></div>
+  <div class="chatmsgs" id="chatMsgs" aria-live="polite"></div>
   <div class="chatchips" id="chatChips">
-    <button type="button" data-q="What are your hours?">Hours</button>
-    <button type="button" data-q="Do you have a pool?">Pool</button>
-    <button type="button" data-q="What classes are on today?">Classes today</button>
-    <button type="button" data-q="How do I get a free pass?">Free pass</button>
-    <button type="button" data-q="Is Kids Klub open?">Kids Klub</button>
-    <button type="button" data-q="How much is a membership?">Membership</button>
+    <button class="chip" data-q="What are your hours?">Hours</button>
+    <button class="chip" data-q="Do you have a pool?">Pool</button>
+    <button class="chip" data-q="What classes are on today?">Classes today</button>
+    <button class="chip" data-q="How do I get a free pass?">Free pass</button>
+    <button class="chip" data-q="Is Kids Klub open?">Kids Klub</button>
+    <button class="chip hot" data-q="How much is a membership?">Membership</button>
   </div>
   <form class="chatin" id="chatForm">
-    <input id="chatInput" type="text" placeholder="Ask about hours, classes, the pool…" autocomplete="off" aria-label="Type your question">
-    <button type="submit">Send</button>
+    <input id="chatInput" type="text" placeholder="Ask about hours, classes, the pool…" autocomplete="off" aria-label="Type your message">
+    <button type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4z"/></svg></button>
   </form>
 </div>
 
 <script>
 /* =====================================================================
-   CLUB CONFIG — re-skinning for the next location = swap this block,
-   the schedule data, and the assets/ images. Everything else adapts.
+   CLUB CONFIG — locked fact pack, verified from lafitness.com
+   club page (clubid 1381) on Nov 20, 2026. Re-skinning for the next
+   location = swap this block, the schedule data, and the assets/.
    ===================================================================== */
 const CLUB = {
   brand: "LA Fitness",
@@ -658,22 +888,6 @@ function clubNow(){
     const days = (tr.dataset.days || "").split(",").map(Number);
     if(days.includes(now.day)) tr.classList.add("today");
   });
-
-  const io = new IntersectionObserver(entries => {
-    for(const e of entries) if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
-  }, { threshold: 0.12 });
-  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-
-  const heroImg = document.getElementById("heroImg");
-  let ticking = false;
-  window.addEventListener("scroll", () => {
-    if(ticking) return; ticking = true;
-    requestAnimationFrame(() => {
-      const y = Math.min(window.scrollY, window.innerHeight);
-      heroImg.style.transform = "translateY(" + (y * 0.16) + "px)";
-      ticking = false;
-    });
-  }, { passive: true });
 })();
 
 /* ---------- chat wiring ---------- */
@@ -687,19 +901,26 @@ function clubNow(){
 
   function addMsg(text, who){
     const d = document.createElement("div");
-    d.className = "cmsg " + who;
+    d.className = "msg " + who;
     d.textContent = text;
     msgs.appendChild(d);
     msgs.scrollTop = msgs.scrollHeight;
+    return d;
   }
   function ask(text){
     if(!text.trim()) return;
     addMsg(text, "user");
+    const typing = document.createElement("div");
+    typing.className = "msg bot typing";
+    typing.innerHTML = "<span></span><span></span><span></span>";
+    msgs.appendChild(typing);
+    msgs.scrollTop = msgs.scrollHeight;
     const reply = brainAnswer(CLUB, text, clubNow());
-    setTimeout(() => addMsg(reply, "bot"), 320);
+    setTimeout(() => { typing.remove(); addMsg(reply, "bot"); }, 420);
   }
   function toggle(open){
     panel.classList.toggle("open", open);
+    fab.setAttribute("aria-expanded", open ? "true" : "false");
     if(open && !greeted){
       greeted = true;
       addMsg("Hey! I'm the Orange Ave club assistant. Ask me about hours, the pool, today's classes, personal training — or how to get a free guest pass.", "bot");
@@ -708,9 +929,48 @@ function clubNow(){
   }
   fab.addEventListener("click", () => toggle(!panel.classList.contains("open")));
   document.getElementById("chatClose").addEventListener("click", () => toggle(false));
-  document.querySelectorAll("#chatChips button").forEach(b => b.addEventListener("click", () => ask(b.dataset.q)));
+  document.querySelectorAll("#chatChips .chip").forEach(b => b.addEventListener("click", () => ask(b.dataset.q)));
   form.addEventListener("submit", e => { e.preventDefault(); const v = input.value; input.value = ""; ask(v); });
 })();
+</script>
+<script>
+// Hero background video (LA Fitness's own homepage hero video) — injected only
+// after load, and skipped for reduced-motion / Save-Data visitors; the club
+// photo behind it is the hero either way.
+(function () {
+  var mount = document.getElementById('heroVideo');
+  if (!mount) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var saveData = navigator.connection && navigator.connection.saveData;
+  if (reduce || saveData) return;
+  function inject() {
+    var f = document.createElement('iframe');
+    f.src = 'https://player.vimeo.com/video/' + mount.getAttribute('data-vimeo') + '?background=1&autoplay=1&loop=1&muted=1&byline=0&title=0';
+    f.setAttribute('allow', 'autoplay; fullscreen');
+    f.title = 'LA Fitness club tour video';
+    mount.appendChild(f);
+  }
+  if (document.readyState === 'complete') {
+    if (window.requestIdleCallback) requestIdleCallback(inject); else setTimeout(inject, 600);
+  } else {
+    window.addEventListener('load', function () {
+      if (window.requestIdleCallback) requestIdleCallback(inject); else setTimeout(inject, 600);
+    });
+  }
+})();
+document.querySelectorAll('.vtile').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var wrap = document.createElement('div');
+    wrap.className = 'vframe';
+    var f = document.createElement('iframe');
+    f.src = 'https://player.vimeo.com/video/' + b.getAttribute('data-vimeo') + '?autoplay=1&title=0&byline=0';
+    f.setAttribute('allow', 'autoplay; fullscreen; picture-in-picture');
+    f.setAttribute('allowfullscreen', '');
+    f.title = b.getAttribute('aria-label') || 'LA Fitness video';
+    wrap.appendChild(f);
+    b.replaceWith(wrap);
+  });
+});
 </script>
 </body>
 </html>
